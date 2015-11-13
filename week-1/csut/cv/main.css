@@ -1,0 +1,71 @@
+body {
+  color: #444;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background-image: url(img/bg3.png);
+  background-attachment: fixed;
+}
+
+.main{
+  max-width: 65em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  padding-top: 20px;
+  background-color: #ededed;
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.lec1{
+  height: 40px;
+  background: #43A6FF;
+  margin-left: 50px;
+  margin-right: 0;
+  padding: 0px 2px 0px 5px;
+
+}
+.lec2{
+  height: 40px;
+  margin-right: 100px;
+  width: 30px;
+  background: red;
+  margin-top: -40px;
+}
+.lec3{
+  height: 40px;
+  margin-right: 0;
+  margin-left: 0;
+  margin-top: 30px;
+  background: #43A6FF;
+}
+
+ul {
+  border-left: 1px solid black;
+  margin-left: 10px;
+  padding-left: 3px;
+}
+
+ul li{
+  margin-left: 10px;
+  padding-left: 0px;
+  margin-top: 5px;
+  list-style-image: url('img/potty.png');
+}
+.nev{
+  /*border-bottom: 2px solid #cf8a05;*/
+}
+
+.sections{
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+section{
+  border-bottom: 3px solid black;
+}
+
+.szakmai_tapasztalat{
+  float: right;ś
+}
