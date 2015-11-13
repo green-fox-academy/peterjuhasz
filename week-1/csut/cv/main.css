@@ -18,21 +18,23 @@ body {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
 /*****************************
-lécek
+header, lécek
 ******************************/
 .lec1 {
   height: 40px;
-  background: #43A6FF;
+  background: #3189d9;
   margin-left: 50px;
   margin-right: 0;
-  padding: 0px 2px 0px 5px;
+  padding-left: 5px;
+  padding-top:px;
   box-shadow: 0px 6px 20px -3px rgba(0,0,0,0.48);
+
 }
 .lec2 {
   height: 40px;
   margin-right: 100px;
   width: 30px;
-  background: red;
+  background: #3189d9;
   margin-top: -40px;
   box-shadow: 0px 6px 20px -3px rgba(0,0,0,0.48);
 }
@@ -42,18 +44,41 @@ lécek
   margin-right: 0;
   margin-left: 0;
   margin-top: 30px;
-  background: #43A6FF;
+  background: #3189d9;
+}
+
+#profil_pic {
+  display:block;
+  float:right;
+  margin-right: 100px;
+  margin-top: -72px;
+}
+
+/*****************************
+mobil email li
+******************************/
+#address{
+  list-style: none;
+}
+
+#mobil {
+list-style-image: url('img/mobil.png');
+margin-top: 10px;
+}
+#email {
+list-style-image: url('img/email.png');
+margin-top: 10px;
 }
 /*****************************
 sections
 ******************************/
-section ul {
+#content section ul {
   border-left: 1px solid black;
   margin-left: -15px;
   padding-left: 3px;
 }
 
-section ul li {
+#content section ul li {
   margin-left: 10px;
   padding-left: 0px;
   margin-top: 5px;
@@ -71,42 +96,26 @@ section ul li {
 }
 
 section {
-  border-bottom: 2px solid black; /* section border*/
+  /*border-bottom: 2px solid black; /* section border*/
   margin-right: 40px;
 }
-
+section h1{
+  border-bottom: 1px solid black;
+}
 #maindetails {
   margin-right: 40px;
   margin-left: 40px;
 }
 
+.hobby p {
+  text-align: center;
+}
+
 /*****************************
-list style plusz
+list-style plusz
 ******************************/
 #plusz {
   list-style-image: url('img/plusz.png');
-}
-
-/*****************************
-felxbox1
-******************************/
-# {
-  display: flex;
-  flex-flow: row;
-  /* or inline-flex */
-}
-
-.flex-item1 {
-  order: 1;
-  flex: 50%;
-  background-color: #77fce1;
-  max-height
-}
-
-.flex-item2 {
-  order: 2;
-  flex: 50%;
-  background-color: #c2c3c3;
 }
 
 /*****************************
@@ -120,13 +129,12 @@ felxbox2
 
 .flex-item1 {
   order: 1;
-  flex: 50%;
-  background-color: #77fce1;
-  max-height
+  flex: 1;
+  max-height:400px;
 }
 
 .flex-item2 {
   order: 2;
-  flex: 50%;
-  background-color: #c2c3c3;
+  flex: 1;
+  max-height:400px;
 }
