@@ -7,7 +7,7 @@ body {
   background-attachment: fixed;
 }
 
-.main{
+.main {
   max-width: 65em;
   margin-left: auto;
   margin-right: auto;
@@ -15,25 +15,27 @@ body {
   margin-bottom: 80px;
   padding-top: 20px;
   background-color: #ededed;
-  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
 
-.lec1{
+.lec1 {
   height: 40px;
   background: #43A6FF;
   margin-left: 50px;
   margin-right: 0;
   padding: 0px 2px 0px 5px;
-
+  box-shadow: 0px 6px 20px -3px rgba(0,0,0,0.48);
 }
-.lec2{
+.lec2 {
   height: 40px;
   margin-right: 100px;
   width: 30px;
   background: red;
   margin-top: -40px;
+  box-shadow: 0px 6px 20px -3px rgba(0,0,0,0.48);
 }
-.lec3{
+
+.lec3 {
   height: 40px;
   margin-right: 0;
   margin-left: 0;
@@ -41,31 +43,76 @@ body {
   background: #43A6FF;
 }
 
-ul {
+section ul {
   border-left: 1px solid black;
-  margin-left: 10px;
+  margin-left: -15px;
   padding-left: 3px;
 }
 
-ul li{
+section ul li {
   margin-left: 10px;
   padding-left: 0px;
   margin-top: 5px;
   list-style-image: url('img/potty.png');
 }
-.nev{
+
+.nev {
   /*border-bottom: 2px solid #cf8a05;*/
+  margin-left: 50px;
 }
 
-.sections{
+.sections {
   margin-right: 30px;
   margin-left: 30px;
 }
 
-section{
+section {
   border-bottom: 3px solid black;
 }
 
-.szakmai_tapasztalat{
-  float: right;ś
+#maindetails {
+  margin-right: 40px;
+  margin-left: 40px;
 }
+
+ {
+
+}
+
+#plusz {
+  list-style-image: url('img/plusz.png');
+}
+
+.szakmai_tapasztalat {
+}
+
+#tab {
+  display: flex;
+  flex-flow: row;
+  /* or inline-flex */
+}
+
+.flex-item1 {
+  order: 1;
+  flex: 50%;
+  background-color: #77fce1;
+  max-height
+}
+
+.flex-item2 {
+  order: 2;
+  flex: 50%;
+  background-color: #c2c3c3;
+}
+
+/*.flex-container {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-flow: row nowrap;
+	flex-flow: row nowrap;
+}
+
+.flex-item {
+	-webkit-flex: 1 0 auto;
+	flex: 1 0 auto;
+}*/
