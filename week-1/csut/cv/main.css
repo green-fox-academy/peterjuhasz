@@ -17,7 +17,9 @@ body {
   background-color: #ededed;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
-
+/*****************************
+lécek
+******************************/
 .lec1 {
   height: 40px;
   background: #43A6FF;
@@ -42,7 +44,9 @@ body {
   margin-top: 30px;
   background: #43A6FF;
 }
-
+/*****************************
+sections
+******************************/
 section ul {
   border-left: 1px solid black;
   margin-left: -15px;
@@ -56,7 +60,7 @@ section ul li {
   list-style-image: url('img/potty.png');
 }
 
-.nev {
+.name {
   /*border-bottom: 2px solid #cf8a05;*/
   margin-left: 50px;
 }
@@ -67,7 +71,8 @@ section ul li {
 }
 
 section {
-  border-bottom: 3px solid black;
+  border-bottom: 2px solid black; /* section border*/
+  margin-right: 40px;
 }
 
 #maindetails {
@@ -75,18 +80,17 @@ section {
   margin-left: 40px;
 }
 
- {
-
-}
-
+/*****************************
+list style plusz
+******************************/
 #plusz {
   list-style-image: url('img/plusz.png');
 }
 
-.szakmai_tapasztalat {
-}
-
-#tab {
+/*****************************
+felxbox1
+******************************/
+# {
   display: flex;
   flex-flow: row;
   /* or inline-flex */
@@ -105,14 +109,24 @@ section {
   background-color: #c2c3c3;
 }
 
-/*.flex-container {
-	display: -webkit-flex;
-	display: flex;
-	-webkit-flex-flow: row nowrap;
-	flex-flow: row nowrap;
+/*****************************
+felxbox2
+******************************/
+#tab {
+  display: flex;
+  flex-flow: row;
+  /* or inline-flex */
 }
 
-.flex-item {
-	-webkit-flex: 1 0 auto;
-	flex: 1 0 auto;
-}*/
+.flex-item1 {
+  order: 1;
+  flex: 50%;
+  background-color: #77fce1;
+  max-height
+}
+
+.flex-item2 {
+  order: 2;
+  flex: 50%;
+  background-color: #c2c3c3;
+}
