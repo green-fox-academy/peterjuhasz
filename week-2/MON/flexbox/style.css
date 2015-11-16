@@ -1,0 +1,33 @@
+body{
+    color:green;
+}
+
+.container{
+    background: aqua;
+    width: 500px;
+    height:600px;
+    padding:30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    /*flex-wrap: wrap;*/
+    /*flex-flow: column wrap;*/
+    justify-content: space-between;
+}
+
+.box {
+background: yellow;
+font-weight: bold;
+font-size: 30px;
+/*width: 50%;*/
+padding: 20px;
+box-sizing: border-box;
+border: 10px solid red;
+order: 1;
+}
+
+.first{
+order:66;
+flex-grow: 1;
+flex-basis: 40%;
+ }

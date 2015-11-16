@@ -10,16 +10,24 @@ body {
 
 .main {
   max-width: 55em;
+  min-width: 650px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 80px;
   margin-bottom: 80px;
   padding-top: 20px;
   background-color: #ecf0f1;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.effect7 {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), /* The top layer shadow */
+              0 10px 0 -5px #eee, /* The second layer */
+              0 10px 1px -4px rgba(0, 0, 0, .15), /* The second layer shadow */
+              0 20px 0 -10px #eee, /* The third layer */
+              0 20px 1px -9px rgba(0,0,0,0.15);/* The third layer shadow */
 }
 /*****************************
-header, lÃ©cek
+header, lÃƒÆ’Ã‚Â©cek
 ******************************/
 .lec1 {
   height: 35px;
@@ -27,17 +35,17 @@ header, lÃ©cek
   margin-left: 50px;
   margin-right: 0;
   padding-left: 5px;
-  padding-top:5px;
+  padding-top: 5px;
   box-shadow: 0px 6px 20px -3px rgba(0,0,0,0.48);
 }
 
-#cim{
-    color: white;
-    margin-left: 30px;
-    font-weight: normal;
-    text-shadow: -1px -1px grey;
-    font-size: 20px;
-    font: arial;
+#cim {
+  color: white;
+  margin-left: 30px;
+  font-weight: normal;
+  text-shadow: -1px -1px grey;
+  font-size: 20px;
+  font: arial;
 }
 
 .lec2 {
@@ -58,7 +66,7 @@ header, lÃ©cek
 }
 
 #profil_pic {
-  display:block;
+  display: block;
   float: right;
   margin-right: 27.3px;
   margin-top: -72px;
@@ -67,17 +75,47 @@ header, lÃ©cek
 /*****************************
 mobil email li
 ******************************/
-#address{
+#mobil {
   list-style: none;
 }
 
-#mobil {
-list-style-image: url('img/mobil.png');
-margin-top: 10px;
+#mobil::before {
+  content: "";
+  display: inline-block;
+  background-image: url('img/phone.png');
+  margin: -9px;
+  width: 50px;
+ /*or your image's width*/
+height: 30px;background-repeat: no-repeat;
 }
+
+
+
 #email {
-list-style-image: url('img/email.png');
-margin-top: 10px;
+  list-style:none;
+  margin-top: 20.5px;
+}
+
+#email::before {
+content: "";
+display: inline-block;
+background-image: url('img/email.png');
+margin: -9px;
+width: 50px; /*or your image's width*/
+  height: 30px;
+  background-repeat: no-repeat;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #3498db;
+  text-decoration: bold;
+   -webkit-transform: rotate(7deg);
+   transform: rotate(7deg);
 }
 /*****************************
 sections
@@ -111,9 +149,11 @@ section {
   margin-right: 40px;
   margin-left: 0px;
 }
-section h1{
+
+section h1 {
   border-bottom: 1px solid black;
 }
+
 #maindetails {
   margin-right: 40px;
   margin-left: 49px;
@@ -145,11 +185,11 @@ felxbox2
 .flex-item1 {
   order: 1;
   flex: 1;
-  max-height:400px;
+  max-height: 400px;
 }
 
 .flex-item2 {
   order: 2;
   flex: 1;
-  max-height:400px;
+  max-height: 400px;
 }
