@@ -2,36 +2,48 @@ body {
     margin:0;
     display: flex;
     min-height:100vh;
+    background: #f6f6f6;
+    font-family: sans-serif;
 }
 h1{
+    font-size: 28.8px;
+}
+h1, h2 {
+    margin: 0;
+    font-family: serif;
+    font-weight: normal;
     border-bottom: 1px solid #aaa;
+
 }
 .main-container{
-    background: yellow;
     flex-direction: column;
     width:100%;
     order:2;
 }
-
+.main-content {
+    background: white;
+    border: 1px solid #a7d7f9;
+    border-right: 0;
+    padding: 16px;
+    font-size: 0.875em;
+}
 .biography{
     float:right;
     width:271px;
-    background: #f9f9f9;
-
     border: 1px solid #aaa;
-    margin 6px 0 12px 12px;
+    margin: 6px 0 12px 12px;
+    background: #f6f6f6;
     padding:25px;
     box-sizing: border-box;
-
 }
+
 .main-sidebar{
-    background: aqua;
     width: 176px;
-    order:1
+    order:1;
+    flex: 0 0 auto;
 }
 
 .main-header{
-    background: purple;
     height: 80px;
     position:relative;
 }
@@ -71,6 +83,8 @@ menu
     right:0;
     width:300px;
 }
+
+
 /********************************
 footer
 *********************************/
@@ -87,3 +101,16 @@ footer
 /*.box{
     box-sizing: border-box;
 }*/
+
+/********************************
+aside
+*********************************/
+.logo {
+    display:block;
+    width: 135px;
+    height:155px;
+    background: url(../pic/enwiki.png);
+    margin: 6px auto 0;
+    color: transparent;
+    /* color: rgba(0,0,0,0;)*/
+}
