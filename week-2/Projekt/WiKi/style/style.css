@@ -46,6 +46,120 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 /********************************
+header
+*********************************/
+.main-header{
+    height: 80px;
+    position:relative;
+    font-size: 12px;
+}
+
+.main-header ul {
+    margin:0;
+    padding:0;
+    display:flex;
+}
+
+.main-header li{
+    list-style: none;
+}
+
+
+/*-----menu-----*/
+
+#usermenu, .usermenu {
+    position:absolute;
+    right:10px;
+    top:0px;
+}
+
+.usermenu  a, .user-status{
+    display: block;
+    padding: 10px 5px;
+}
+
+.user-status {
+    padding: 10px 5px 10px 20px;
+    background: url(https://en.wikipedia.org/static/1.27.0-wmf.6/skins/Vector/images/user-icon.png?9e7ea) no-repeat 5px center;
+    color: grey;
+}
+
+.main-header nav {
+    position: absolute;
+    margin-right: 25px;
+}
+
+.talkmenu{
+    bottom: 0;
+    left:0;
+}
+
+.editmenu {
+    bottom: 0;
+    right:300px;
+}
+.tab{
+    /*background-color: red;*/
+    padding-left: 1px;
+    background: linear-gradient(to bottom, #fff 0%, #a7d7f9 100%);
+}
+.tab li {
+    padding-right:1px;
+}
+.tab a {/* azÃƒÂ©rt kell a tab a-ra rÃƒÂ¡tenni, h nÃƒÂ¶velje a link mÃƒÂ©retÃƒÂ©t */
+    display: block;/*mert inline elemeknek nem tol el a padding a */
+    padding: 15px 5px 5px 5px;
+    /*background-color: yellow;*/
+    background: linear-gradient(to bottom,#fff 0%, #e8f2f8 100%);
+    position: relative;
+    bottom: -1px;
+}
+
+.tab a:visited{
+    color: rgb(6, 69, 173);
+}
+
+.active-tab a {
+    background:#fff;
+    border-bottom: 1px solid #fff;
+    text-decoration: none;
+    color: black;
+}
+.search {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width:300px;
+    box-sizing: border-box;
+    margin-right: 8px;
+    margin-left: 12px;
+    margin-bottom: 2px;
+}
+
+.search input[type=search]{
+background: url(../pic/magnifier0.png) no-repeat right center, linear-gradient(to bottom, #f6f6f6 0%, #fff 50%);
+border: 1px solid #aaa;
+height 24px;
+border-radius: 2px;padding: 0 20px 0 5px;
+width: 275px;
+height: 25px;
+}
+
+.search input[type=submit]{
+background: transparent;
+    border:0;
+    bottom: 0;
+    height:24px;
+    position: absolute;
+    right:0;
+    width:25px;
+    cursor: pointer;
+}
+.search input:focus{
+    outline: 1000px solid rgba(255, 1, 1, 0.5);
+}
+
+/********************************
 main
 *********************************/
 
@@ -121,133 +235,51 @@ dd {
     padding-left:0;
 }
 .contents li::before {
-  counter-increment: section;
-  content: counters(section,".") " ";
+    counter-increment: section;
+    content: counters(section,".") " ";
 }
 
+/*----references----*/
+.references {
+    -webkit-columns: 3 50px;
+    columns: 3 50px;
+    margin-left:-10px;
 
-/********************************
-menu
-*********************************/
-.main-header{
-    height: 80px;
-    position:relative;
-    font-size: 12px;
 }
-
-.main-header ul {
-    margin:0;
-    padding:0;
-    display:flex;
-}
-
-.main-header li{
-    list-style: none;
-}
-
-/********************************
-menu
-*********************************/
-#usermenu, .usermenu {
-    position:absolute;
-    right:10px;
-    top:0px;
-}
-
-.usermenu  a, .user-status{
-    display: block;
-    padding: 10px 5px;
-}
-
-.user-status {
-    padding: 10px 5px 10px 20px;
-    background: url(https://en.wikipedia.org/static/1.27.0-wmf.6/skins/Vector/images/user-icon.png?9e7ea) no-repeat 5px center;
-    color: grey;
-}
-
-.main-header nav {
-    position: absolute;
-    margin-right: 25px;
-}
-.talkmenu{
-    bottom: 0;
-    left:0;
-}
-
-.editmenu {
-    bottom: 0;
-    right:300px;
-}
-.tab{
-    /*background-color: red;*/
-    padding-left: 1px;
-    background: linear-gradient(to bottom, #fff 0%, #a7d7f9 100%);
-}
-.tab li {
-    padding-right:1px;
-}
-.tab a {/* azÃƒÂ©rt kell a tab a-ra rÃƒÂ¡tenni, h nÃƒÂ¶velje a link mÃƒÂ©retÃƒÂ©t */
-    display: block;/*mert inline elemeknek nem tol el a padding a */
-    padding: 15px 5px 5px 5px;
-    /*background-color: yellow;*/
-    background: linear-gradient(to bottom,#fff 0%, #e8f2f8 100%);
-    position: relative;
-    bottom: -1px;
-}
-
-.tab a:visited{
-    color: rgb(6, 69, 173);
-}
-
-.active-tab a {
-    background:#fff;
-    border-bottom: 1px solid #fff;
-    text-decoration: none;
-    color: black;
-}
-.search {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width:300px;
-    box-sizing: border-box;
-    margin-right: 8px;
-    margin-left: 12px;
-    margin-bottom: 2px;
-}
-
-.search input[type=search]{
-background: url(../pic/magnifier0.png) no-repeat right center, linear-gradient(to bottom, #f6f6f6 0%, #fff 50%);
-border: 1px solid #aaa;
-height 24px;
-border-radius: 2px;padding: 0 20px 0 5px;
-width: 275px;
-height: 25px;
-}
-
-.search input[type=submit]{
-background: transparent;
-    border:0;
-    bottom: 0;
-    height:24px;
-    position: absolute;
-    right:0;
-    width:25px;
-    cursor: pointer;
-}
-.search input:focus{
-    outline: 1000px solid rgba(255, 1, 1, 0.5);
+.references li {
+    -webkit-column-break-inside: avoid;
+    margin-left: 20px;
 }
 
 /********************************
 footer
 *********************************/
 
-.main-footer{
+/*.main-footer{
     background: transparent;
     height: 200px;
+}*/
+
+.main-footer {
+ font-size: 0.8em;
+ margin-top: 20px;
 }
 
+.main-footer p {
+ margin-left: 25px;
+ margin-right: 20px;
+}
+
+.footer-menu {
+ display: flex;
+ margin-left: 15px;
+ padding-left: 0;
+}
+
+.footer-menu li {
+ list-style: none;
+ padding: 0 8px;
+}
 /*.box{
     box-sizing: border-box;
 }*/
@@ -296,10 +328,4 @@ body > aside > div > ul:nth-child(2) {
     margin: 6px auto 0;
     color: transparent;
     /* color: rgba(0,0,0,0;)*/
-}
-)*/
-}
-)*/
-}
-)*/
 }
