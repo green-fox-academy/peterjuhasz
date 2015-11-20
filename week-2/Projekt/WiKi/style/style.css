@@ -18,6 +18,7 @@ h1, h2 {
     padding-bottom: 7px;
     margin-top: 30px;
     border-bottom: 1px solid #aaa;
+    overflow: hidden;
 }
 a {
     text-decoration: none;
@@ -175,23 +176,38 @@ main
     border-right: 0;
     padding: 21px 25px 25px;
     font-size: 0.875em;
-    line-height: 23px;
+    line-height: 22px;
 }
 .warning > em {
     margin-left: 20px;
 }
-/*------biography------*/
-.biography {
+/*------photos------*/
+.sitepics {
     float:right;
-    width:271px;
     border: 1px solid #aaa;
     margin: 6px 0 12px 12px;
     background: #f6f6f6;
-    padding:25px;
-    box-sizing: border-box;
+    box-sizing:content-box;
     line-height: 1.5em;
-     padding-bottom: 0;
-    }
+    padding-bottom: 0;
+    font-size: 12px;
+    padding: 5px;
+}
+
+.biography {
+    width:220px;
+    padding:25px;
+}
+
+.nasapic {
+    width: 220px;
+}
+
+.MHpic {
+    width: 222px;
+
+}
+
 
 .biography-content {
      margin-left: -15px;
@@ -223,6 +239,10 @@ dd {
     display: inline-block;
     /* padding: 10px; */
     background-color:#F6F6F6;
+    line-height: 18px;
+}
+.contents > strong{
+    margin-left: 6px;
 }
 .contents ol {
   counter-reset: section;
@@ -234,6 +254,7 @@ dd {
 .contents  ol > li  ol > li {
     padding-left:0;
 }
+
 .contents li::before {
     counter-increment: section;
     content: counters(section,".") " ";
@@ -242,7 +263,7 @@ dd {
 /*----references----*/
 .references {
     -webkit-columns: 3 50px;
-    columns: 3 50px;
+    columns: 3;
     margin-left:-10px;
 
 }
@@ -328,4 +349,6 @@ body > aside > div > ul:nth-child(2) {
     margin: 6px auto 0;
     color: transparent;
     /* color: rgba(0,0,0,0;)*/
+}
+)*/
 }
