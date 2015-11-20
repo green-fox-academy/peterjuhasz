@@ -1,0 +1,92 @@
+.searchform {
+    display:flex;
+    justify-content: flex-end;
+    width:300px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    background-color: transparent;
+}
+.search input {
+background-color: transparent;
+box-sizing: border-box;
+}
+.searchButton {
+    background-image: url(../pic/search-ltr.png);
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 1.65em;
+    height: 100%;
+    line-height: 1;
+    direction: ltr;
+    white-space: nowrap;
+    overflow: hidden;
+    background-position: center center;
+    background-repeat: no-repeat;
+    outline: 0;
+    border: 0;
+}
+
+.form {
+    font-size: 16px;
+    width:290px;
+}
+
+.form  input{
+    width:100%;
+    height: 32px;
+    padding: .3em .3em .3em .6em;
+    border: 1px solid #cccccc;
+    border-radius: 2px;
+    box-sizing: border-box;
+    font-size: 16px;
+
+}
+
+/*p.input:focus + p{
+    color: red;
+    border: 2px solid green;
+}*/
+
+input:focus{
+box-shadow: inset 0 0 0 2px #347bff;
+    border-color: #347bff;
+    outline: 0;
+}
+.helpme{
+    float:right;
+}
+.createbtn {
+    background: #00af89;
+    color: #fff;
+    border: 1px solid #00af89;
+    text-shadow: 0 1px rgba(0,0,0,0.1);
+    width:100%;
+    height: 32px;
+    font-size: 1em;
+    /*vertical-align: middle;
+    text-align: center;*/
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 2px;
+}
+.createbtn:focus{
+border-color: #ffffff;
+box-shadow: 0 0 0 1px #008c6d;
+outline: none;
+}
+.createbtn:hover {
+    background-color: #008c6d;
+    color: #fff;
+    border: 1px solid #00af89;
+    text-shadow: 0 1px rgba(0,0,0,0.1);
+
+}
+::-webkit-input-placeholder{
+    font-style: italic;
+        /*color:red;*/
+}
+/*::placeholder {
+
+    font-style: italic;
+}*/

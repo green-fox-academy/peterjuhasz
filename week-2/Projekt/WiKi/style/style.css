@@ -1,0 +1,305 @@
+body {
+    margin:0;
+    display: flex;
+    min-height:100vh;
+    font-family: sans-serif;
+    font-size: 16px;
+    background: linear-gradient(to bottom, white 30px, #f6f6f6 150px);
+}
+
+h1{
+    font-size: 28.8px;
+}
+
+h1, h2 {
+    margin: 0;
+    font-family: serif;
+    font-weight: normal;
+    padding-bottom: 7px;
+    margin-top: 30px;
+    border-bottom: 1px solid #aaa;
+}
+a {
+    text-decoration: none;
+    color: #0645ad;
+}
+a:hover {
+    text-decoration: underline;
+}
+a:visited {
+    color: #0b0080;
+}
+
+input[type="search"] {
+    -webkit-appearance: textfield;
+}
+
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+}
+.source {
+    margin-top: 10px;
+}
+
+/********************************
+main
+*********************************/
+
+.main-container {
+    flex-direction: column;
+    width:100%;
+    order:2;
+
+}
+.main-content {
+    background: white;
+    border: 1px solid #a7d7f9;
+    border-right: 0;
+    padding: 21px 25px 25px;
+    font-size: 0.875em;
+    line-height: 23px;
+}
+.warning > em {
+    margin-left: 20px;
+}
+/*------biography------*/
+.biography {
+    float:right;
+    width:271px;
+    border: 1px solid #aaa;
+    margin: 6px 0 12px 12px;
+    background: #f6f6f6;
+    padding:25px;
+    box-sizing: border-box;
+    line-height: 1.5em;
+     padding-bottom: 0;
+    }
+
+.biography-content {
+     margin-left: -15px;
+}
+
+.biography-content p {
+     text-indent: 70px;
+     margin: 0;
+}
+
+dl {
+     margin-bottom: 0;
+}
+
+dt {
+     float: left;
+     font-weight: bold;
+}
+
+dd {
+     margin-left: 80px;
+     margin-bottom: 8px;
+}
+
+/*----contents menu----*/
+
+.contents {
+    border: 1px solid grey;
+    display: inline-block;
+    /* padding: 10px; */
+    background-color:#F6F6F6;
+}
+.contents ol {
+  counter-reset: section;
+  list-style-type: none;
+  padding: 0 9px 0;
+  font-size: 95%;
+}
+
+.contents  ol > li  ol > li {
+    padding-left:0;
+}
+.contents li::before {
+  counter-increment: section;
+  content: counters(section,".") " ";
+}
+
+
+/********************************
+menu
+*********************************/
+.main-header{
+    height: 80px;
+    position:relative;
+    font-size: 12px;
+}
+
+.main-header ul {
+    margin:0;
+    padding:0;
+    display:flex;
+}
+
+.main-header li{
+    list-style: none;
+}
+
+/********************************
+menu
+*********************************/
+#usermenu, .usermenu {
+    position:absolute;
+    right:10px;
+    top:0px;
+}
+
+.usermenu  a, .user-status{
+    display: block;
+    padding: 10px 5px;
+}
+
+.user-status {
+    padding: 10px 5px 10px 20px;
+    background: url(https://en.wikipedia.org/static/1.27.0-wmf.6/skins/Vector/images/user-icon.png?9e7ea) no-repeat 5px center;
+    color: grey;
+}
+
+.main-header nav {
+    position: absolute;
+    margin-right: 25px;
+}
+.talkmenu{
+    bottom: 0;
+    left:0;
+}
+
+.editmenu {
+    bottom: 0;
+    right:300px;
+}
+.tab{
+    /*background-color: red;*/
+    padding-left: 1px;
+    background: linear-gradient(to bottom, #fff 0%, #a7d7f9 100%);
+}
+.tab li {
+    padding-right:1px;
+}
+.tab a {/* azÃƒÂ©rt kell a tab a-ra rÃƒÂ¡tenni, h nÃƒÂ¶velje a link mÃƒÂ©retÃƒÂ©t */
+    display: block;/*mert inline elemeknek nem tol el a padding a */
+    padding: 15px 5px 5px 5px;
+    /*background-color: yellow;*/
+    background: linear-gradient(to bottom,#fff 0%, #e8f2f8 100%);
+    position: relative;
+    bottom: -1px;
+}
+
+.tab a:visited{
+    color: rgb(6, 69, 173);
+}
+
+.active-tab a {
+    background:#fff;
+    border-bottom: 1px solid #fff;
+    text-decoration: none;
+    color: black;
+}
+.search {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width:300px;
+    box-sizing: border-box;
+    margin-right: 8px;
+    margin-left: 12px;
+    margin-bottom: 2px;
+}
+
+.search input[type=search]{
+background: url(../pic/magnifier0.png) no-repeat right center, linear-gradient(to bottom, #f6f6f6 0%, #fff 50%);
+border: 1px solid #aaa;
+height 24px;
+border-radius: 2px;padding: 0 20px 0 5px;
+width: 275px;
+height: 25px;
+}
+
+.search input[type=submit]{
+background: transparent;
+    border:0;
+    bottom: 0;
+    height:24px;
+    position: absolute;
+    right:0;
+    width:25px;
+    cursor: pointer;
+}
+.search input:focus{
+    outline: 1000px solid rgba(255, 1, 1, 0.5);
+}
+
+/********************************
+footer
+*********************************/
+
+.main-footer{
+    background: transparent;
+    height: 200px;
+}
+
+/*.box{
+    box-sizing: border-box;
+}*/
+
+/********************************
+aside
+*********************************/
+.main-sidebar{
+    width: 176px;
+    order:1;
+    flex: 0 0 auto;
+}
+
+.sidemenu {
+    font-size: 12px;
+}
+.sidemenu h3{
+    /*box-sizing: border-box;*/
+    margin-left: 30px;
+    font-size: 12px;
+    font-weight: 200;
+}
+
+aside img {
+    display: block;
+    margin:0 auto 0;
+}
+/*aside li {
+    background-image: url(../pic/portal-break.png);
+}*/
+aside li {
+    list-style: none;
+    margin: 0;
+    line-height: 18.6px;
+}
+
+body > aside > div > ul:nth-child(2) {
+    margin-left: -9px;
+}
+
+.logo {
+    display:block;
+    width: 135px;
+    height:155px;
+    background: url(../pic/enwiki.png);
+    margin: 6px auto 0;
+    color: transparent;
+    /* color: rgba(0,0,0,0;)*/
+}
+)*/
+}
+)*/
+}
+)*/
+}
