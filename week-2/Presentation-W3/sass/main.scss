@@ -1,0 +1,123 @@
+
+// @import 'valami';
+@font-face {
+    font-family: "foxfont";
+    src: url("../font/fox-font.woff") format('woff');
+}
+
+// colors: basic rgba  (60, 184, 121, 1)
+// $fox-color: rgba(60, 184, 121, 1);
+$fox-color: rgba(60, 184, 121, 1);
+$fox-font: foxfont;
+//width: basic 980px
+$content-width: 980px;
+
+body{
+    font-family: foxfont, arial, sans-serif;
+    color: grey;
+}
+
+a, a:hover {
+    // color:white;
+    text-decoration: none;
+}
+
+header {
+    margin: 0 auto 0;
+    height: 170px;
+    border-bottom: 15px solid $fox-color;
+    // nested properties = // border-bottom: {style:solid; color:$fox-green;}
+
+
+    .header {
+        @extend header; //inheritance
+        width: $content-width;
+        border-color: $fox-color;
+        text-transform: uppercase;
+        position: relative;
+        text-align: center;
+
+        .logotext {
+            font-size: 25px;
+        }
+
+        .nav-container{
+            height: 29px;
+            left: 0px;
+            position:absolute;
+            top: 141px;
+            width: $content-width;
+
+            // display:inline-block;
+
+            .nav{
+                display:flex;
+                flex:1 0 auto;
+                text-align: center;
+                height:29px;
+
+                a{
+                    flex: 1 0 auto;
+
+                    &:nth-child(1)>div {border-left:0;}
+
+                    div{
+                        background-color: transparent;
+                        border-left: 1px solid grey;
+                        box-sizing: border-box;
+                        color: grey;
+                        height: 29px;
+                        padding:3px;
+                        width:100%;
+
+                        &:active {
+                            background-color: $fox-color;
+                            color:white;
+                        }
+                        &:hover {
+                            background-color: grey;
+                            color:white;
+                        }
+                    }
+                    .active-tab {
+                        @extend div:active;
+
+                    }
+                }
+            }
+        }
+
+        img {
+            display:block;
+            margin: 0 auto 0;
+        }
+    }
+}
+
+// button style mixin!!!
+
+a {
+
+    &:hover{
+
+    }
+}
+
+main{
+    .main-content {
+    width: $content-width;
+    margin: 0 auto 0;
+
+    img {
+        width:100%;
+    }
+    .columns {
+
+        display:flex;
+        div{
+            flex:1;
+        }
+    }
+    }
+
+}

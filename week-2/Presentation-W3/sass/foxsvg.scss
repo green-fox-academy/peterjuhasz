@@ -1,0 +1,9 @@
+@import 'main';
+
+.dark-part {
+    fill: mix(black, $fox-color, 35%);
+}
+
+.light-part{
+    fill:$fox-color;
+}

@@ -1,0 +1,99 @@
+@font-face {
+  font-family: "foxfont";
+  src: url("../font/fox-font.woff") format("woff");
+}
+/* line 15, ../sass/main.scss */
+body {
+  font-family: foxfont, arial, sans-serif;
+  color: grey;
+}
+
+/* line 20, ../sass/main.scss */
+a, a:hover {
+  text-decoration: none;
+}
+
+/* line 25, ../sass/main.scss */
+header, header .header {
+  margin: 0 auto 0;
+  height: 170px;
+  border-bottom: 15px solid #3cb879;
+}
+/* line 32, ../sass/main.scss */
+header .header {
+  width: 980px;
+  border-color: #3cb879;
+  text-transform: uppercase;
+  position: relative;
+  text-align: center;
+}
+/* line 40, ../sass/main.scss */
+header .header .logotext {
+  font-size: 25px;
+}
+/* line 44, ../sass/main.scss */
+header .header .nav-container {
+  height: 29px;
+  left: 0px;
+  position: absolute;
+  top: 141px;
+  width: 980px;
+}
+/* line 53, ../sass/main.scss */
+header .header .nav-container .nav {
+  display: flex;
+  flex: 1 0 auto;
+  text-align: center;
+  height: 29px;
+}
+/* line 59, ../sass/main.scss */
+header .header .nav-container .nav a {
+  flex: 1 0 auto;
+}
+/* line 62, ../sass/main.scss */
+header .header .nav-container .nav a:nth-child(1) > div {
+  border-left: 0;
+}
+/* line 64, ../sass/main.scss */
+header .header .nav-container .nav a div {
+  background-color: transparent;
+  border-left: 1px solid grey;
+  box-sizing: border-box;
+  color: grey;
+  height: 29px;
+  padding: 3px;
+  width: 100%;
+}
+/* line 73, ../sass/main.scss */
+header .header .nav-container .nav a div:active, header .header .nav-container .nav a .active-tab, header .header .header .nav-container .nav a .active-tab {
+  background-color: #3cb879;
+  color: white;
+}
+/* line 77, ../sass/main.scss */
+header .header .nav-container .nav a div:hover {
+  background-color: grey;
+  color: white;
+}
+/* line 90, ../sass/main.scss */
+header .header img {
+  display: block;
+  margin: 0 auto 0;
+}
+
+/* line 107, ../sass/main.scss */
+main .main-content {
+  width: 980px;
+  margin: 0 auto 0;
+}
+/* line 111, ../sass/main.scss */
+main .main-content img {
+  width: 100%;
+}
+/* line 114, ../sass/main.scss */
+main .main-content .columns {
+  display: flex;
+}
+/* line 117, ../sass/main.scss */
+main .main-content .columns div {
+  flex: 1;
+}
