@@ -6,31 +6,27 @@
     src: url("../font/fox-font.woff") format('woff');
 }
 
-// colors: basic rgba  (60, 184, 121, 1)
 
-$fox-color: rgba(60, 184, 121, 1); //cmd+shift+C
+$fox-color: rgba(60, 184, 121, 1); //cmd+shift+C // colors: basic rgba  (60, 184, 121, 1)
 $fox-font: foxfont;
-
-//width: basic 980px
-$content-width: 980px;
+$content-width: 980px; //width: basic 980px
 
 body{font-family: foxfont, arial, sans-serif; color: grey;}
 
 a, a:hover {text-decoration: none;}
 
 header {
-    margin: 0 auto 0;
-    height: 170px;
     border-bottom: 15px solid $fox-color;
+    height: 170px;
+    margin: 0 auto 0;
     // nested properties = // border-bottom: {style:solid; color:$fox-green;}
 
     .header {
         @extend header; //inheritance
-        width: $content-width;
-        border-color: $fox-color;
+        text-align: center;
         text-transform: uppercase;
         position: relative;
-        text-align: center;
+        width: $content-width;
 
         .logotext {
             font-size: 25px;
@@ -93,13 +89,6 @@ header {
 
 // button style mixin!!!
 
-a {
-
-    &:hover {
-
-    }
-}
-
 main{
     .main-content {
     width: $content-width;
@@ -109,14 +98,14 @@ main{
         img {width: 100%; margin-bottom: 30px;}
 
         .tanulj {
+            align-content: center;
+            color: mix(black, $fox-color, 30%);
+            font-size: 40px;
             text-align: right;
+            text-transform: uppercase;
             top: 94px;
             left: 672px;
             position: absolute;
-            color: mix(black, $fox-color, 30%);
-            text-transform: uppercase;
-            align-content: center;
-            font-size: 40px;
 
             span {
                 background-color: white;
@@ -124,29 +113,29 @@ main{
         }
 
         .apply {
-            top: 204px;
-            left: 569px;
-            width: 385px;
-            height: 74px;
-            position: absolute;
-            min-height: 19px;
-            background-color: mix(black, $fox-color, 30%);
-            color: white;
-            text-transform: uppercase;
             align-content: center;
-            text-align: center;
+            color: white;
+            background-color: mix(black, $fox-color, 30%);
             box-sizing: border-box;
+            height: 74px;
+            left: 569px;
+            min-height: 19px;
             padding-top: 30px;
+            position: absolute;
+            top: 204px;
+            text-transform: uppercase;
+            text-align: center;
+            width: 385px;
         }
 
         .columns {
             display: flex;
-            justify-content: space-between;
             flex-wrap: nowrap;
+            justify-content: space-between;
 
             div{
-                width: 311px;
                 text-align: justify;
+                width: 311px;
             }
         }
     }
