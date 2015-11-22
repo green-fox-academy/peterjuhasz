@@ -1,33 +1,28 @@
 
 // @import 'valami';
+
 @font-face {
     font-family: "foxfont";
     src: url("../font/fox-font.woff") format('woff');
 }
 
 // colors: basic rgba  (60, 184, 121, 1)
-// $fox-color: rgba(60, 184, 121, 1);
-$fox-color: rgba(60, 184, 121, 1);
+
+$fox-color: rgba(60, 184, 121, 1); //cmd+shift+C
 $fox-font: foxfont;
+
 //width: basic 980px
 $content-width: 980px;
 
-body{
-    font-family: foxfont, arial, sans-serif;
-    color: grey;
-}
+body{font-family: foxfont, arial, sans-serif;color: grey;}
 
-a, a:hover {
-    // color:white;
-    text-decoration: none;
-}
+a, a:hover {text-decoration: none;}
 
 header {
     margin: 0 auto 0;
     height: 170px;
     border-bottom: 15px solid $fox-color;
     // nested properties = // border-bottom: {style:solid; color:$fox-green;}
-
 
     .header {
         @extend header; //inheritance
@@ -41,7 +36,7 @@ header {
             font-size: 25px;
         }
 
-        .nav-container{
+        .nav-container {
             height: 29px;
             left: 0px;
             position:absolute;
@@ -50,18 +45,18 @@ header {
 
             // display:inline-block;
 
-            .nav{
+            .nav {
                 display:flex;
                 flex:1 0 auto;
                 text-align: center;
                 height:29px;
 
-                a{
+                a {
                     flex: 1 0 auto;
 
                     &:nth-child(1)>div {border-left:0;}
 
-                    div{
+                    div {
                         background-color: transparent;
                         border-left: 1px solid grey;
                         box-sizing: border-box;
@@ -74,11 +69,13 @@ header {
                             background-color: $fox-color;
                             color:white;
                         }
+
                         &:hover {
                             background-color: grey;
                             color:white;
                         }
                     }
+
                     .active-tab {
                         @extend div:active;
 
@@ -108,16 +105,18 @@ main{
     width: $content-width;
     margin: 0 auto 0;
 
-    img {
-        width:100%;
-    }
-    .columns {
+        img {width:100%; margin-bottom: 30px;}
 
-        display:flex;
-        div{
-            flex:1;
+        .columns {
+            display:flex;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+
+            div{
+                width: 311px;
+                text-align: justify;
+            }
         }
-    }
     }
 
 }
