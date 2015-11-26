@@ -74,8 +74,9 @@ def collect_numbers_square(row,column):
 
 # -----------------------------------------------------------
 # 1. sor első nulla eleméhez tartozó számok számok
-
-
+###################################################
+#-------------------LAYER 2.-----------------------
+###################################################
 def collect_numbers_for_zero(row, column):
 
     a = collect_numbers_column(column)
@@ -88,16 +89,46 @@ def collect_numbers_for_zero(row, column):
     # print (c)
 
     all_number_for_zero = a + b + c
-    print(all_number_for_zero)
+    # print(all_number_for_zero)
 
-    print( "the missing numbers are: ")
-    print((set(compare_list) - set(all_number_for_zero)))
+    # print( "the missing numbers are: ")
+    missing_numbers=(set(compare_list) - set(all_number_for_zero))
+    # print(missing_numbers)
 
     return len(set(all_number_for_zero)) #remove duplicates
 
 
-print (collect_numbers_for_zero(0, 0))
+# print (collect_numbers_for_zero(0, 0))
 
-# temp_list = []
-# for item in range(sudoku[1])
-#     pass
+###################################################
+#-------------------LAYER 3.-----------------------
+###################################################
+row = 0
+column = zero_rowindexes(0)[0]
+
+while row < 9:
+    zero_value = []
+    # row_zero_value = []
+    for r in range(len(zero_rowindexes(row))):
+        zero_value.append(collect_numbers_for_zero(row, zero_rowindexes(row)[r]))
+    row += 1
+    print (zero_value)
+
+
+
+# print(collect_numbers_for_zero(0,2))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+####
