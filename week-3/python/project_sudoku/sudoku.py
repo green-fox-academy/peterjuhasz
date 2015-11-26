@@ -41,11 +41,22 @@ def collect_numbers_column(column):
 
 # print(collect_numbers_column(0))
 
-def collect_numbers_square(row):
+def collect_numbers_square(row,column):
+    if row < 3:
+        s_row = 0
+    elif row < 6:
+        s_row = 3
+    else:
+        s_row = 6
 
-    s_column = 0
-    s_row = 0
-    square_column=0
+    if column < 3:
+        s_column = 0
+    elif column < 6:
+        s_column = 3
+    else:
+        s_column = 6
+
+    square_column = 0
     collected_numbers_in_square = []
     while square_column < 3 :
         for r in range(len(sudoku[:3])):
@@ -53,11 +64,11 @@ def collect_numbers_square(row):
                 collected_numbers_in_square.append(sudoku[s_row][s_column+r])
             print(collected_numbers_in_square)
         s_row += 1
-        square_column +=1
+        square_column += 1
     return collected_numbers_in_square
 
 
-print(collect_numbers_square(0))
+print(collect_numbers_square(4,5))
 # -----------------------------------------------------------
 # 1. sor első nulla eleméhez tartozó számok számok
 
