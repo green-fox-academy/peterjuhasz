@@ -43,14 +43,16 @@ def collect_numbers_column(column):
 
 def collect_numbers_square(row):
 
-
+    s_column = 0
+    s_row = 0
     square_column=0
     collected_numbers_in_square = []
     while square_column < 3 :
         for r in range(len(sudoku[:3])):
-            if sudoku[row][r] != 0:
-                collected_numbers_in_square.append(sudoku[row][r])
-        row += 1
+            if sudoku[s_row][s_column+r] != 0:
+                collected_numbers_in_square.append(sudoku[s_row][s_column+r])
+            print(collected_numbers_in_square)
+        s_row += 1
         square_column +=1
     return collected_numbers_in_square
 
