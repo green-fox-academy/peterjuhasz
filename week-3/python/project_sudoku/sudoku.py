@@ -9,6 +9,8 @@ sudoku = [[5,3,0,0,7,0,0,0,0],
           [0,0,0,4,1,9,0,0,5],
           [0,0,0,0,8,0,0,7,9]]
 
+compare_list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
 check_list = []
 def correct_check_list():
     pass
@@ -42,6 +44,7 @@ def collect_numbers_column(column):
 # print(collect_numbers_column(0))
 
 def collect_numbers_square(row,column):
+#  select sarting row position
     if row < 3:
         s_row = 0
     elif row < 6:
@@ -49,6 +52,7 @@ def collect_numbers_square(row,column):
     else:
         s_row = 6
 
+#  select sarting column position
     if column < 3:
         s_column = 0
     elif column < 6:
@@ -62,30 +66,37 @@ def collect_numbers_square(row,column):
         for r in range(len(sudoku[:3])):
             if sudoku[s_row][s_column+r] != 0:
                 collected_numbers_in_square.append(sudoku[s_row][s_column+r])
-            print(collected_numbers_in_square)
         s_row += 1
         square_column += 1
     return collected_numbers_in_square
 
+# print(collect_numbers_square(7,9))
 
-print(collect_numbers_square(4,5))
 # -----------------------------------------------------------
 # 1. sor első nulla eleméhez tartozó számok számok
 
-# collect items for zeros
-# def collect_numbers_for_zero(column, row):
-#
-#     a = collect_numbers_column(column)
-#     print (a)
-#     b = collect_numbers_square(row)
-#     print (b)
-#     # c = collect_numbers_square(square_nr)
-#     # print (c)
-#     mind = a + b
-#     print(mind)
-#     return mind
-#
-# print (collect_numbers_for_zero(0, 0))
+
+def collect_numbers_for_zero(row, column):
+
+    a = collect_numbers_column(column)
+    # print (a)
+
+    b = collect_numbers_row(row)
+    # print (b)
+
+    c = collect_numbers_square(row, column)
+    # print (c)
+
+    all_number_for_zero = a + b + c
+    print(all_number_for_zero)
+
+    print( "the missing numbers are: ")
+    print((set(compare_list) - set(all_number_for_zero)))
+
+    return len(set(all_number_for_zero)) #remove duplicates
+
+
+print (collect_numbers_for_zero(0, 0))
 
 # temp_list = []
 # for item in range(sudoku[1])
