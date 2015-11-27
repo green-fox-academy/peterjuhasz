@@ -9,7 +9,8 @@ sudoku = [[5,3,0,0,7,0,0,0,0],
           [0,0,0,4,1,9,0,0,5],
           [0,0,0,0,8,0,0,7,9]]
 
-sudoku_mod = [[5,3,0,0,7,0,0,0,0],
+
+sudoku_basic = [[5,3,0,0,7,0,0,0,0],
           [6,0,0,1,9,5,0,0,0],
           [0,9,8,0,0,0,0,6,0],
           [8,0,0,0,6,0,0,0,3],
@@ -19,9 +20,44 @@ sudoku_mod = [[5,3,0,0,7,0,0,0,0],
           [0,0,0,4,1,9,0,0,5],
           [0,0,0,0,8,0,0,7,9]]
 
+sudoku_solved = [[5, 3, 4, 6, 7, 8, 9, 1, 2],
+[6, 7, 2, 1, 9, 5, 3, 4, 8],
+[1, 9, 8, 3, 4, 2, 5, 6, 7],
+[8, 5, 9, 7, 6, 1, 4, 2, 3],
+[4, 2, 6, 8, 5, 3, 7, 9, 1],
+[7, 1, 3, 9, 2, 4, 8, 5, 6],
+[9, 6, 1, 5, 3, 7, 2, 8, 4],
+[2, 8, 7, 4, 1, 9, 6, 3, 5],
+[3, 4, 5, 2, 8, 6, 1, 7, 9]]
+
+
+# sudoku = [[5, 3, 4, 6, 7, 8, 9, 1, 2],
+# [6, 7, 2, 1, 9, 5, 3, 4, 0],
+# [1, 9, 8, 3, 4, 2, 5, 6, 7],
+# [8, 5, 0, 7, 6, 1, 4, 2, 3],
+# [4, 2, 6, 8, 5, 3, 7, 9, 1],
+# [7, 1, 0, 9, 2, 4, 8, 5, 6],
+# [9, 6, 1, 5, 3, 7, 2, 8, 4],
+# [2, 8, 7, 4, 1, 9, 6, 3, 5],
+# [3, 0, 5, 2, 8, 6, 1, 7, 9]]
+#
+#
+# sudoku_mod = [[5, 3, 4, 6, 7, 8, 9, 1, 2],
+# [6, 7, 2, 1, 9, 5, 3, 4, 0],
+# [1, 9, 8, 3, 4, 2, 5, 6, 7],
+# [8, 5, 0, 7, 6, 1, 4, 2, 3],
+# [4, 2, 6, 8, 5, 3, 7, 9, 1],
+# [7, 1, 0, 9, 2, 4, 8, 5, 6],
+# [9, 6, 1, 5, 3, 7, 2, 8, 4],
+# [2, 8, 7, 4, 1, 9, 6, 3, 5],
+# [3, 0, 5, 2, 8, 6, 1, 7, 9]]
+
 
 compare_list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
+###################################################
+#-------------------LAYER 1.-----------------------
+###################################################
 def zero_rowindexes(row, matrix):
     zeros_indexes_in_row = []
     for i in range(len(matrix[row])):
@@ -124,7 +160,7 @@ def missing_numbers(row, column, matrix):
 # print (missing_numbers(7, 7, sudoku))
 
 def matrix_print(a):
-    print('\n')
+
     print(a[0])
     print(a[1])
     print(a[2])
@@ -134,11 +170,12 @@ def matrix_print(a):
     print(a[6])
     print(a[7])
     print(a[8])
+    print('\n')
 
 ###################################################
 #-------------------LAYER 3.-----------------------
 ###################################################
-def optimum_list_length(row, matrix):
+def optimum_list(row, matrix):
     # Print the priority for the zeros
     row = 0
     while row < 9:
@@ -147,17 +184,20 @@ def optimum_list_length(row, matrix):
         for r in range(len(zero_rowindexes(row,matrix))):
             zero_value.append(collect_numbers_for_zero(row, zero_rowindexes(row, matrix)[r], matrix))
         row += 1
-        # print (zero_value)
+        print (zero_value)
     return(zero_value)
-# optimum_list_length(1, sudoku)
+# optimum_list(1, sudoku)
 
 def solution(matrix):
+    # column = zero_rowindexes(0, matrix)[0]  #-----ERROR------:visszatérési értéke nem megfelelő a végén!! le kell fedni, amikor az első sorban elfogynak a nullák
     row = 0
-    column = zero_rowindexes(0, matrix)[0]
-    run=0
+    run = 0
+
     while row < 9:
         change = 0
+        szam = 0
         r = 0
+
         while r < len(zero_rowindexes(row, matrix)):
             if collect_numbers_for_zero(row, zero_rowindexes(row, matrix)[r], matrix) == 8:
 
@@ -192,27 +232,49 @@ def solution(matrix):
                 # a = zero_rowindexes(row, matrix)[r]
                 # b = missing_numbers(row, a, matrix)
                 # print(b)
-                print(missing_numbers(row, zero_rowindexes(row, matrix)[r], matrix) )
-                change = int(input("ha cserélni szeretnél írd be a számot:"))
-                sudoku_mod[row][zero_rowindexes(row, matrix)[r]] = change
-                matrix_print(sudoku_mod)
+
+                # optimum_list(row, matrix)
+
+                # print(missing_numbers(row, zero_rowindexes(row, matrix)[r], matrix) )
+                # change = int(input("ha cserélni szeretnél írd be a számot:"))
+
+                szam = missing_numbers(row, zero_rowindexes(row, matrix)[r], matrix)
+                # print(szam)
+                # input("nyomj egy billentyűt")
+                # sudoku_mod[row][zero_rowindexes(row, matrix)[r]] = szam
+                # matrix_print(sudoku_mod)
+                # print(szam.pop())
+
+                change = int(szam.pop())
+                # input("nyomj egy billentyűt")
+                sudoku[row][zero_rowindexes(row, matrix)[r]] = change
+                # matrix_print(sudoku_mod)
                 change = 0
-            r += 1
+                szam = 0
+                r += 1
+            else:
+                r += 1
         row += 1
     # matrix_print(sudoku)
-    return sudoku_mod
+    # matrix_print(sudoku_mod)
+    return sudoku
 
-# --------------------Magic-------------------------
-solution(solution(solution(solution(solution(solution(solution(solution(solution(solution(sudoku))))))))))
+# -----------------------Magic-------------------------
 
+def is_solved(matrix):
+    for n in range(len(matrix)):
+        for i in range(len(matrix[n])):
+            if matrix[n][i] == 0:
+                return False
+    return True
 
+# print(is_solved(sudoku_solved))
 
-# while (not ( is_solved(sudoku)):
-#     sudoku = solution (sudoku)
-#
-# solve():
-#
-#     if (is_solved(s) ):
-#         return sudok
-#     else:
-#         return solve( )
+while is_solved(sudoku) == False:
+    sudoku = solution(sudoku)
+# --------------------Print Results-------------------------
+print('\n')
+print ("Sudoku start:")
+matrix_print(sudoku_basic)
+print ("Solved:")
+matrix_print(sudoku)
