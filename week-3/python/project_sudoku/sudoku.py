@@ -138,9 +138,9 @@ def matrix_print(a):
 ###################################################
 #-------------------LAYER 3.-----------------------
 ###################################################
-def wtf_length(row, matrix):
+def optimum_list_length(row, matrix):
     # Print the priority for the zeros
-    row = 0 # ne kommenteld ki, mert a lenti is használja
+    row = 0
     while row < 9:
         zero_value = []
         row_zero_value = []
@@ -149,8 +149,7 @@ def wtf_length(row, matrix):
         row += 1
         # print (zero_value)
     return(zero_value)
-    # Print the priority for the zeros
-# wtf_length(1, sudoku)
+# optimum_list_length(1, sudoku)
 
 def solution(matrix):
     row = 0
@@ -193,7 +192,7 @@ def solution(matrix):
                 # a = zero_rowindexes(row, matrix)[r]
                 # b = missing_numbers(row, a, matrix)
                 # print(b)
-                print(missing_numbers(row, zero_rowindexes(row, matrix)[r], matrix) ) #nyomtasd ki a
+                print(missing_numbers(row, zero_rowindexes(row, matrix)[r], matrix) )
                 change = int(input("ha cserélni szeretnél írd be a számot:"))
                 sudoku_mod[row][zero_rowindexes(row, matrix)[r]] = change
                 matrix_print(sudoku_mod)
