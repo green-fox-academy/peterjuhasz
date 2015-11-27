@@ -3,22 +3,11 @@ sudoku = [[5,3,0,0,7,0,0,0,0],
           [6,0,0,1,9,5,0,0,0],
           [0,9,8,0,0,0,0,6,0],
           [8,0,0,0,6,0,0,0,3],
-          [4,0,0,8,0,3,0,0,1],
+          [4,0,0,8,5,3,0,0,1],
           [7,0,0,0,2,0,0,0,6],
-          [0,6,0,0,0,0,2,8,0],
-          [0,0,0,4,1,9,0,0,5],
+          [0,6,0,0,0,7,2,8,4],
+          [0,0,0,4,1,9,0,3,5],
           [0,0,0,0,8,0,0,7,9]]
-
-sudoku_mod = [[5,3,0,0,7,0,0,0,0],
-          [6,0,0,1,9,5,0,0,0],
-          [0,9,8,0,0,0,0,6,0],
-          [8,0,0,0,6,0,0,0,3],
-          [4,0,0,8,0,3,0,0,1],
-          [7,0,0,0,2,0,0,0,6],
-          [0,6,0,0,0,0,2,8,0],
-          [0,0,0,4,1,9,0,0,5],
-          [0,0,0,0,8,0,0,7,9]]
-
 
 compare_list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
@@ -108,8 +97,7 @@ def collect_numbers_for_zero(row, column):
 
     return len(set(all_number_for_zero)) #remove duplicates
 
-
-#------------------ missing numbers --------------------
+# 1. sor első nulla eleméhez tartozó számok számok
 def missing_numbers(row, column):
 
     a = collect_numbers_column(column)
@@ -129,22 +117,13 @@ def missing_numbers(row, column):
     print(missing_numbers)
 
     return missing_number #remove duplicates
-# print (collect_numbers_for_zero(0, 0))
 
-def matrix_print():
-    print(sudoku_mod[1])
-    print(sudoku_mod[2])
-    print(sudoku_mod[3])
-    print(sudoku_mod[4])
-    print(sudoku_mod[5])
-    print(sudoku_mod[6])
-    print(sudoku_mod[7])
-    print(sudoku_mod[8])
+
+# print (collect_numbers_for_zero(0, 0))
 
 ###################################################
 #-------------------LAYER 3.-----------------------
 ###################################################
-
 # row = 0
 # column = zero_rowindexes(0)[0]
 #
@@ -155,52 +134,24 @@ def matrix_print():
 #         zero_value.append(collect_numbers_for_zero(row, zero_rowindexes(row)[r]))
 #     row += 1
 #     print (zero_value)
-
-# print(collect_numbers_for_zero(0,2))
-
-
-def solution():
-    row = 0
-    column = zero_rowindexes(0)[0]
-    run=0
-    while row < 9:
-        # zero_value = []
-        # row_zero_value = []
-        change = 0
-        for r in range(len(zero_rowindexes(row))):
-            if collect_numbers_for_zero(row, zero_rowindexes(row)[r]) == 8:
-                print("mukodik")
-                # a = zero_rowindexes(row)[r]
-                # b = missing_numbers(row, a)
-                # print(b)
-                print(missing_numbers(row, zero_rowindexes(row)[r]) )
-                change = int(input("ha cserélni szeretnél írd be a számot:"))
-                sudoku_mod[row][zero_rowindexes(row)[r]] = change
-                # matrix_print()
-                change = 0
-        row += 1
-    matrix_print()
-    return sudoku_mod
-
-print(solution())
-
-    # print (zero_value)
 #
+# # print(collect_numbers_for_zero(0,2))
 
 
-# print(collect_numbers_for_zero(0,2))
+# row = 0
+# column = zero_rowindexes(0)[0]
+#
+# while row < 9:
+#     zero_value = []
+#     # row_zero_value = []
+#     for r in range(len(zero_rowindexes(row))):
+#         if (collect_numbers_for_zero(row, zero_rowindexes(row)[r])) = 8;
+#             sudoku[row][column] =
+#     row += 1
+#     print (zero_value)
 
-# print(sudoku[7])
-# sudoku[7][7]=missing_numbers(7, 7)
-# print(sudoku[7])
-
-# matrix_print()
-
-
-
-
-
-
+print(missing_numbers(7, 7))
+# sudoku[0][0]= int(missing_numbers(7, 7))
 
 
 

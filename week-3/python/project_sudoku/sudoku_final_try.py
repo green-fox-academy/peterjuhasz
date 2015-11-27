@@ -3,22 +3,21 @@ sudoku = [[5,3,0,0,7,0,0,0,0],
           [6,0,0,1,9,5,0,0,0],
           [0,9,8,0,0,0,0,6,0],
           [8,0,0,0,6,0,0,0,3],
-          [4,0,0,8,0,3,0,0,1],
+          [4,0,0,8,5,3,0,0,1],
           [7,0,0,0,2,0,0,0,6],
-          [0,6,0,0,0,0,2,8,0],
-          [0,0,0,4,1,9,0,0,5],
+          [0,6,0,0,0,7,2,8,4],
+          [0,0,0,4,1,9,0,3,5],
           [0,0,0,0,8,0,0,7,9]]
 
 sudoku_mod = [[5,3,0,0,7,0,0,0,0],
           [6,0,0,1,9,5,0,0,0],
           [0,9,8,0,0,0,0,6,0],
           [8,0,0,0,6,0,0,0,3],
-          [4,0,0,8,0,3,0,0,1],
+          [4,0,0,8,5,3,0,0,1],
           [7,0,0,0,2,0,0,0,6],
-          [0,6,0,0,0,0,2,8,0],
-          [0,0,0,4,1,9,0,0,5],
+          [0,6,0,0,0,7,2,8,4],
+          [0,0,0,4,1,9,0,3,5],
           [0,0,0,0,8,0,0,7,9]]
-
 
 compare_list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
@@ -158,11 +157,11 @@ def matrix_print():
 
 # print(collect_numbers_for_zero(0,2))
 
+row = 0
+column = zero_rowindexes(0)[0]
 
+run=0
 def solution():
-    row = 0
-    column = zero_rowindexes(0)[0]
-    run=0
     while row < 9:
         # zero_value = []
         # row_zero_value = []
@@ -173,13 +172,13 @@ def solution():
                 # a = zero_rowindexes(row)[r]
                 # b = missing_numbers(row, a)
                 # print(b)
-                print(missing_numbers(row, zero_rowindexes(row)[r]) )
+                print( int(missing_numbers(row, zero_rowindexes(row)[r])) )
                 change = int(input("ha cserélni szeretnél írd be a számot:"))
                 sudoku_mod[row][zero_rowindexes(row)[r]] = change
                 # matrix_print()
                 change = 0
         row += 1
-    matrix_print()
+
     return sudoku_mod
 
 print(solution())
