@@ -22,18 +22,14 @@ sudoku_mod = [[5,3,0,0,7,0,0,0,0],
 
 compare_list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-check_list = []
-def correct_check_list():
-    pass
-
 def zero_rowindexes(row, matrix):
     zeros_indexes_in_row = []
     for i in range(len(matrix[row])):
         if matrix[row][i] == 0:
             zeros_indexes_in_row.append(i)
     return zeros_indexes_in_row
-
 # print(zero_rowindexes(0, sudoku))
+
 #-----------collect numbers fom row------------------
 def collect_numbers_row(row, matrix):
     collected_numbers_in_row = []
@@ -41,7 +37,6 @@ def collect_numbers_row(row, matrix):
         if matrix[row][i] != 0:
             collected_numbers_in_row.append(matrix[row][i])
     return collected_numbers_in_row
-
 # print(collect_numbers_row(0, sudoku))
 
 # -----------collect numbers from Column---------------
@@ -51,11 +46,10 @@ def collect_numbers_column(column, matrix):
         if matrix[i][column] != 0:
             collected_numbers_in_column.append(matrix[i][column])
     return collected_numbers_in_column
-
 # print(collect_numbers_column(0,sudoku))
 
 def collect_numbers_square(row,column, matrix):
-#  select sarting row position
+    #  select sarting row position
     if row < 3:
         s_row = 0
     elif row < 6:
@@ -63,7 +57,7 @@ def collect_numbers_square(row,column, matrix):
     else:
         s_row = 6
 
-#  select sarting column position
+    #  select sarting column position
     if column < 3:
         s_column = 0
     elif column < 6:
@@ -80,11 +74,8 @@ def collect_numbers_square(row,column, matrix):
         s_row += 1
         square_column += 1
     return collected_numbers_in_square
-
 # print(collect_numbers_square(7,9,sudoku))
 
-# -----------------------------------------------------------
-# 1. sor első nulla eleméhez tartozó számok számok
 ###################################################
 #-------------------LAYER 2.-----------------------
 ###################################################
@@ -134,6 +125,7 @@ def missing_numbers(row, column, matrix):
 
 def matrix_print(a):
     print('\n')
+    print(a[0])
     print(a[1])
     print(a[2])
     print(a[3])
@@ -146,26 +138,6 @@ def matrix_print(a):
 ###################################################
 #-------------------LAYER 3.-----------------------
 ###################################################
-
-# row = 0
-# column = zero_rowindexes(0)[0]
-#
-# while row < 9:
-#     zero_value = []
-#     # row_zero_value = []
-#     for r in range(len(zero_rowindexes(row))):
-#         zero_value.append(collect_numbers_for_zero(row, zero_rowindexes(row)[r]))
-#     row += 1
-#     print (zero_value)
-
-# print(collect_numbers_for_zero(0,2))
-
-sudoku_history=[]
-
-temp_matrix = sudoku #
-
-
-
 def wtf_length(row, matrix):
     # Print the priority for the zeros
     row = 0 # ne kommenteld ki, mert a lenti is használja
@@ -180,27 +152,20 @@ def wtf_length(row, matrix):
     # Print the priority for the zeros
 # wtf_length(1, sudoku)
 
-
-
 def solution(matrix):
     row = 0
     column = zero_rowindexes(0, matrix)[0]
     run=0
     while row < 9:
-        # zero_value = []
-        # row_zero_value = []
         change = 0
         r = 0
-        # for r in range(len(zero_rowindexes(row, matrix))):
         while r < len(zero_rowindexes(row, matrix)):
-        # for r in range(len(wtf_length(row,matrix))):
-        # while r <= len(wtf_length(row,matrix)+1):
             if collect_numbers_for_zero(row, zero_rowindexes(row, matrix)[r], matrix) == 8:
 
                 #----------------------debug----------------------------
                 # print("if condition:")
                 # print(collect_numbers_for_zero(row, zero_rowindexes(row, matrix)[r], matrix))
-
+                #
                 # print("zero_rowindexes aktuális")
                 # print(zero_rowindexes(row, matrix)[r])
                 #
@@ -222,7 +187,7 @@ def solution(matrix):
                 #
                 #
                 # print("zero_rowindexes(row, matrix)[r]")
-
+                #
                 #----------------------debug----------------------------
                 # print("mukodik")
                 # a = zero_rowindexes(row, matrix)[r]
@@ -235,39 +200,20 @@ def solution(matrix):
                 change = 0
             r += 1
         row += 1
-    # sudoku_history.append(sudoku_mod)
     # matrix_print(sudoku)
     return sudoku_mod
 
-solution(solution(solution(solution(solution(solution(solution(solution(solution(sudoku)))))))))
+# --------------------Magic-------------------------
+solution(solution(solution(solution(solution(solution(solution(solution(solution(solution(sudoku))))))))))
 
-# i=0
-# sudoku_temp=sudoku
-# while i < 10:
+
+
+# while (not ( is_solved(sudoku)):
+#     sudoku = solution (sudoku)
 #
-#     solution(sudoku_temp)
+# solve():
 #
-#     i+=1
-
-
-
-
-
-# print(collect_numbers_for_zero(0,2))
-
-# print(sudoku[7])
-# sudoku[7][7]=missing_numbers(7, 7)
-# print(sudoku[7])
-
-# matrix_print()
-
-
-
-
-
-
-
-
-
-
-####
+#     if (is_solved(s) ):
+#         return sudok
+#     else:
+#         return solve( )
