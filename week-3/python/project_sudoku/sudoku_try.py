@@ -124,35 +124,44 @@ def missing_numbers(row, column):
 ###################################################
 #-------------------LAYER 3.-----------------------
 ###################################################
-# row = 0
-# column = zero_rowindexes(0)[0]
-#
-# while row < 9:
-#     zero_value = []
-#     # row_zero_value = []
-#     for r in range(len(zero_rowindexes(row))):
-#         zero_value.append(collect_numbers_for_zero(row, zero_rowindexes(row)[r]))
-#     row += 1
-#     print (zero_value)
-#
-# # print(collect_numbers_for_zero(0,2))
+row = 0
+column = zero_rowindexes(0)[0]
+
+while row < 9:
+    zero_value = []
+    # row_zero_value = []
+    for r in range(len(zero_rowindexes(row))):
+        zero_value.append(collect_numbers_for_zero(row, zero_rowindexes(row)[r]))
+    row += 1
+    print (zero_value)
+
+# print(collect_numbers_for_zero(0,2))
 
 
-# row = 0
-# column = zero_rowindexes(0)[0]
-#
-# while row < 9:
-#     zero_value = []
-#     # row_zero_value = []
-#     for r in range(len(zero_rowindexes(row))):
-#         if (collect_numbers_for_zero(row, zero_rowindexes(row)[r])) = 8;
-#             sudoku[row][column] =
-#     row += 1
-#     print (zero_value)
+row = 0
+column = zero_rowindexes(0)[0]
+
+while row < 9:
+    zero_value = []
+    # row_zero_value = []
+    for r in range(len(zero_rowindexes(row))):
+        if (collect_numbers_for_zero(row, zero_rowindexes(row)[r])) = 8;
+            sudoku[row][column] =
+    row += 1
+    print (zero_value)
 
 print(missing_numbers(7, 7))
-# sudoku[0][0]= int(missing_numbers(7, 7))
+sudoku[0][0]= int(missing_numbers(7, 7))
 
+print(zero_rowindexes(0,sudoku))
+print(zero_rowindexes(1,sudoku))
+print(zero_rowindexes(2,sudoku))
+print(zero_rowindexes(3,sudoku))
+print(zero_rowindexes(4,sudoku))
+print(zero_rowindexes(5,sudoku))
+print(zero_rowindexes(6,sudoku))
+print(zero_rowindexes(7,sudoku))
+print(zero_rowindexes(8,sudoku))
 
 
 

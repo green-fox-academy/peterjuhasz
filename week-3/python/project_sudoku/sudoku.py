@@ -164,6 +164,24 @@ sudoku_history=[]
 
 temp_matrix = sudoku #
 
+
+
+def wtf_length(row, matrix):
+    # Print the priority for the zeros
+    row = 0 # ne kommenteld ki, mert a lenti is használja
+    while row < 9:
+        zero_value = []
+        row_zero_value = []
+        for r in range(len(zero_rowindexes(row,matrix))):
+            zero_value.append(collect_numbers_for_zero(row, zero_rowindexes(row, matrix)[r], matrix))
+        row += 1
+        # print (zero_value)
+    return(zero_value)
+    # Print the priority for the zeros
+# wtf_length(1, sudoku)
+
+
+
 def solution(matrix):
     row = 0
     column = zero_rowindexes(0, matrix)[0]
@@ -172,28 +190,67 @@ def solution(matrix):
         # zero_value = []
         # row_zero_value = []
         change = 0
-
-        for r in range(len(zero_rowindexes(row, matrix))):
+        r = 0
+        # for r in range(len(zero_rowindexes(row, matrix))):
+        while r < len(zero_rowindexes(row, matrix)):
+        # for r in range(len(wtf_length(row,matrix))):
+        # while r <= len(wtf_length(row,matrix)+1):
             if collect_numbers_for_zero(row, zero_rowindexes(row, matrix)[r], matrix) == 8:
-                print("mukodik")
-                # a = zero_rowindexes(row)[r]
-                # b = missing_numbers(row, a)
+
+                #----------------------debug----------------------------
+                # print("if condition:")
+                # print(collect_numbers_for_zero(row, zero_rowindexes(row, matrix)[r], matrix))
+
+                # print("zero_rowindexes aktuális")
+                # print(zero_rowindexes(row, matrix)[r])
+                #
+                # print("zero_rowindexes hossza r-hez képest")
+                # print(len(zero_rowindexes(row, matrix)))
+                #
+                # print(zero_rowindexes(0,matrix))
+                # print(zero_rowindexes(1,matrix))
+                # print(zero_rowindexes(2,matrix))
+                # print(zero_rowindexes(3,matrix))
+                # print(zero_rowindexes(4,matrix))
+                # print(zero_rowindexes(5,matrix))
+                # print(zero_rowindexes(6,matrix))
+                # print(zero_rowindexes(7,matrix))
+                # print(zero_rowindexes(8,matrix))
+                #
+                # print("zero_rowindexes következő")
+                # print(zero_rowindexes(row, matrix)[r+1])
+                #
+                #
+                # print("zero_rowindexes(row, matrix)[r]")
+
+                #----------------------debug----------------------------
+                # print("mukodik")
+                # a = zero_rowindexes(row, matrix)[r]
+                # b = missing_numbers(row, a, matrix)
                 # print(b)
-                print(missing_numbers(row, zero_rowindexes(row, matrix)[r], matrix) )
+                print(missing_numbers(row, zero_rowindexes(row, matrix)[r], matrix) ) #nyomtasd ki a
                 change = int(input("ha cserélni szeretnél írd be a számot:"))
                 sudoku_mod[row][zero_rowindexes(row, matrix)[r]] = change
                 matrix_print(sudoku_mod)
                 change = 0
+            r += 1
         row += 1
-
-
     # sudoku_history.append(sudoku_mod)
     # matrix_print(sudoku)
     return sudoku_mod
 
+solution(solution(solution(solution(solution(solution(solution(solution(solution(sudoku)))))))))
 
-solution(sudoku)
+# i=0
+# sudoku_temp=sudoku
+# while i < 10:
 #
+#     solution(sudoku_temp)
+#
+#     i+=1
+
+
+
 
 
 # print(collect_numbers_for_zero(0,2))
