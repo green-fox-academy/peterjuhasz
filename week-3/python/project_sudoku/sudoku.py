@@ -182,7 +182,7 @@ def solution(matrix):
                 print(missing_numbers(row, zero_rowindexes(row, matrix)[r], matrix) )
                 change = int(input("ha cserélni szeretnél írd be a számot:"))
                 sudoku_mod[row][zero_rowindexes(row, matrix)[r]] = change
-                matrix_print(matrix)
+                matrix_print(sudoku_mod)
                 change = 0
         row += 1
 
@@ -191,7 +191,8 @@ def solution(matrix):
     # matrix_print(sudoku)
     return sudoku_mod
 
-print (solution(sudoku))
+
+solution(sudoku)
 #
 
 
