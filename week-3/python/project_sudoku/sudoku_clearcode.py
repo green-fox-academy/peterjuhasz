@@ -138,7 +138,7 @@ def solution(matrix):
             if collect_numbers_for_zero(row, zero_rowindexes(row, matrix)[r], matrix) == 8:
 
                 # just to keep it simple :D :D
-                sudoku[row][zero_rowindexes(row, matrix)[r]] = (missing_numbers(row, zero_rowindexes(row, matrix)[r], matrix)).pop()
+                matrix[row][zero_rowindexes(row, matrix)[r]] = (missing_numbers(row, zero_rowindexes(row, matrix)[r], matrix)).pop()
 
                 #-#-#-#-#-#-#---the 3 lines below is equivalent with the one above--#-#-#-#-#-#-#
                 #
@@ -149,23 +149,22 @@ def solution(matrix):
                 # change = (szam.pop())
                 #
                 # ---------- paste it to the matrix ---------------------------------------------
-                # sudoku[row][zero_rowindexes(row, matrix)[r]] = change
+                # matrix[row][zero_rowindexes(row, matrix)[r]] = change
                 #
                 #-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
 
                 #-------------------to see the steps--------------------
-                # matrix_print(sudoku)
-                # input("pause")
+                matrix_print(matrix)
+                input("pause")
                 #-------------------------------------------------------
             else:
                 r += 1
         row += 1
-    return sudoku
-# --------------------Print Start-------------------------
-print('\n')
-print ("Sudoku start:")
-matrix_print(sudoku)
-# -----------------------Magic------------------------------
+    return matrix
+
+###################################################
+#-------------------LAYER 4.-----------------------
+###################################################
 # check if there are more zeros
 def is_solved(matrix):
     for n in range(len(matrix)):
@@ -175,8 +174,19 @@ def is_solved(matrix):
     return True
 
 # run solution until finish sudoku
-while is_solved(sudoku) == False:
-    sudoku = solution(sudoku)
+def magic (matrix):
+    while is_solved(matrix) == False:
+        matrix = solution(matrix)
+    return matrix
+
+
+
+# --------------------Print Start---------------------------
+print('\n')
+print ("Sudoku start:")
+matrix_print(sudoku)
+# -----------------------CALL MAGIC-------------------------
+magic(sudoku)
 # --------------------Print Results-------------------------
 print ("Solved:")
 matrix_print(sudoku)
