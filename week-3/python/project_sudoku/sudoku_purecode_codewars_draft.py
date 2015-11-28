@@ -1,5 +1,5 @@
 
-sudoku = [[5,3,0,0,7,0,0,0,0],
+puzzle = [[5,3,0,0,7,0,0,0,0],
           [6,0,0,1,9,5,0,0,0],
           [0,9,8,0,0,0,0,6,0],
           [8,0,0,0,6,0,0,0,3],
@@ -8,16 +8,6 @@ sudoku = [[5,3,0,0,7,0,0,0,0],
           [0,6,0,0,0,0,2,8,0],
           [0,0,0,4,1,9,0,0,5],
           [0,0,0,0,8,0,0,7,9]]
-
-sudoku_basic = [[5,3,0,0,7,0,0,0,0],
-                [6,0,0,1,9,5,0,0,0],
-                [0,9,8,0,0,0,0,6,0],
-                [8,0,0,0,6,0,0,0,3],
-                [4,0,0,8,0,3,0,0,1],
-                [7,0,0,0,2,0,0,0,6],
-                [0,6,0,0,0,0,2,8,0],
-                [0,0,0,4,1,9,0,0,5],
-                [0,0,0,0,8,0,0,7,9]]
 
 compare_list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
@@ -115,11 +105,11 @@ def solution(matrix):
         r = 0
         while r < len(zero_rowindexes(row, matrix)):
             if collect_numbers_for_zero(row, zero_rowindexes(row, matrix)[r], matrix) == 8:
-                sudoku[row][zero_rowindexes(row, matrix)[r]] = (missing_numbers(row, zero_rowindexes(row, matrix)[r], matrix)).pop()
+                puzzle[row][zero_rowindexes(row, matrix)[r]] = (missing_numbers(row, zero_rowindexes(row, matrix)[r], matrix)).pop()
             else:
                 r += 1
         row += 1
-    return sudoku
+    return puzzle
 
 def is_solved(matrix):
     for n in range(len(matrix)):
@@ -128,11 +118,15 @@ def is_solved(matrix):
                 return False
     return True
 
-while is_solved(sudoku) == False:
-    sudoku = solution(sudoku)
+def sudoku(puzzle):
+    while is_solved(puzzle) == False:
+        puzzle = solution(puzzle)
+    return puzzle
 
-print('\n')
-print ("Sudoku start:")
-matrix_print(sudoku_basic)
-print ("Solved:")
-matrix_print(sudoku)
+print(sudoku(puzzle))
+
+# print('\n')
+# print ("puzzle start:")
+# matrix_print(puzzle_basic)
+# print ("Solved:")
+# matrix_print(puzzle)

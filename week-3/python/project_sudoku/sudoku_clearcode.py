@@ -174,7 +174,7 @@ def solution(matrix):
     return sudoku
 
 # -----------------------Magic------------------------------
-# check it there are more zeros
+# check if there are more zeros
 def is_solved(matrix):
     for n in range(len(matrix)):
         for i in range(len(matrix[n])):
