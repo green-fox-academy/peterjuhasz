@@ -1,17 +1,17 @@
-class New_game():
-    def __init__(self):
-        pass
-    def teszt(self):
-        print("teszt")
 
-class Load():
-    def __init__(self):
-        pass
-    def teszt(self):
-        print("teszt")
+def new_game():
+    print(new_game)
 
-class Save_and_Exit():
-    def __init__(self):
-        pass
-    def teszt(self):
-        print("teszt")
+def load():
+    print(load)
+
+def save_and_exit():
+    print(load)
+
+# load = Load()
+# balint = New_game()
+# print(balint)
+
+
+# def __repr__(self):
+#     return '{}: {}'.format(self.name, salf.suly)
