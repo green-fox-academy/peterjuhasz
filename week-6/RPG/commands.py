@@ -2,6 +2,7 @@ from character import Character
 from random import randint
 
 player = Character()
+opponent = Character()
 
 
 def new_game():
@@ -32,12 +33,14 @@ def save():
 def quit():
     pass
 # ---------------- roll_stat menu commands -----------------
-def roll_stat():
+def roll_stat(character):
     print()
-    player.hp = randint(1,6) + randint(1,6) + 12
-    player.dexterity = randint(1,6) + 6
-    player.luck = randint(1,6) + 6
-    print(player)
+    character.hp = randint(1,6) + randint(1,6) + 12
+    character.hp_max = character.hp
+    character.dexterity = randint(1,6) + 6
+    character.luck = randint(1,6) + 6
+    character.luck_max = character.luck
+    print(character)
 
 # ---------------- potion_menu menu commands -----------------
 def potion(x):
@@ -51,7 +54,10 @@ def potion(x):
     else:
         print('else ag')
 
-# ---------------- potion_menu menu commands -----------------
+# ---------------- begin menu commands -----------------
+def begin():
+    print(begin)
 
-def fight():
-    
+# ---------------- strike menu commands -----------------
+def roll_cube(character):
+    character.roll = randint(1,6) + randint(1,6)

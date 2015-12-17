@@ -2,11 +2,14 @@ from menu import MenuItem
 from menu import Menu
 from commands import *
 
+# player = Character()
+# monster = Character()
+
 def main():
     main_items = Menu([
             MenuItem(1, 'New Game', name_m),
             MenuItem(2, 'Load Game', load),
-            MenuItem(0, 'Save and Exit', save_and_exit)
+            MenuItem(3, 'Save and Exit', save_and_exit)
             ])
     main_items.print_menu()
     main_items.choose()
@@ -25,7 +28,7 @@ def name_m():
 
 # ---------------- name menu  ----------------
 def roll_stat_menu():
-    roll_stat()
+    roll_stat(player)
     name_items = Menu([
             MenuItem(1, 'reroll_stat', roll_stat_menu),
             MenuItem(2, 'Continue', potion_select_menu),
@@ -64,8 +67,10 @@ def potion_menu(selection):
 # ---------------- begin menu  ------------------
 def begin_menu():
     print(player)
+    roll_stat(opponent)
+
     name_items = Menu([
-            MenuItem(1, 'Begin', begin),
+            MenuItem(1, 'Begin', fight_menu),
             MenuItem(2, 'Save', save),
             MenuItem(3, 'Quit', quit),
             ])
@@ -75,7 +80,61 @@ def begin_menu():
 # ---------------- fight menu  ------------------
 def fight_menu():
     print("Test your Sword in a test fight")
+    print(player)
+    print(opponent)
+    name_items = Menu([
+            MenuItem(1, 'Strike', strike_menu),
+            MenuItem(2, 'Retreat', save),
+            MenuItem(3, 'Quit', quit),
+            ])
+    name_items.print_menu()
+    name_items.choose()
 
+# ---------------- strike menu  ------------------
+def strike_menu():
+    roll_cube(player)
+    roll_cube(opponent)
+
+    if player.roll > opponent.roll:
+        print(player)
+        print(opponent)
+        print('You hits monster')
+        opponent.hp -= 2
+        print(player)
+        print(opponent)
+
+    else:
+        print(player)
+        print(opponent)
+        print('Monster hits you')
+        player.hp -= 2
+        print(player)
+        print(opponent)
+
+    name_items = Menu([
+            MenuItem(1, 'Try your luck', try_your_luck_menu),
+            MenuItem(2, 'Retreat', strike_menu),
+            MenuItem(3, 'Quit', quit),
+            ])
+    name_items.print_menu()
+    name_items.choose()
+
+# ---------------- Try your luck menu  ------------------
+def try_your_luck_menu():
+    luck_roll = randint(1,6) + randint(1,6)
+    if player.luck > luck_roll:
+        if player.roll < opponent.roll:
+            player.hp -= 2
+        else:
+            opponent.hp -= 1
+    else:
+        if player.roll < opponent.roll:
+            player.hp -= 1
+        else:
+            opponent.hp -= 4
+
+    print(player)
+    print(opponent)
 
 
 if __name__ == "__main__": main()

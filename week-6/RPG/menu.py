@@ -11,9 +11,9 @@ class Menu:
             print(item)
 
     def choose(self, number = 0):
-        number = int(input('Please choose an option: '))
         try:
-            if type(number) == str or number > len(self.items):
+            number = int(input('Please choose an option: '))
+            if number < 0 or number > len(self.items):
                 raise ValueError
         except ValueError:
             print('You entered a wrong value.')
