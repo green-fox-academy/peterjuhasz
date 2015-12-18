@@ -2,9 +2,6 @@ from menu import MenuItem
 from menu import Menu
 from commands import *
 
-# player = Character()
-# monster = Character()
-
 def main():
     main_items = Menu([
             MenuItem(1, 'New Game', name_m),

@@ -6,6 +6,7 @@ class Character:
         self.dexterity = dexterity
         self.luck = luck
         self.luck_max = luck_max
+        
         self.roll = roll
 
     def __repr__(self):
