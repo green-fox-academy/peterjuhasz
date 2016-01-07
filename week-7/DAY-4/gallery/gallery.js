@@ -9,7 +9,7 @@ var kepek = [
     'http://lorempixel.com/400/200/sports/7/',
     'http://lorempixel.com/400/200/sports/8/',
     'http://lorempixel.com/400/200/sports/9/',
-    'http://lorempixel.com/400/200/sports/11/'
+    'http://lorempixel.com/400/200/sports/12/'
 ];
 // ---------------------- Buttons -----------------------
 
@@ -24,14 +24,16 @@ function changePicture(src) {
 }
 
 previousButton.addEventListener('click',
-function () {
-    changePicture(kepek[--currentIndex]);
+    function () {
+        currentIndex === 0 ? alert('this is the first picture') : changePicture(kepek[--currentIndex]);
 })
 
 nextButton.addEventListener('click',
-function () {
-    changePicture(kepek[++currentIndex]);
+    function () {
+        currentIndex + 1 ===  kepek.length ? alert('this is the last picture') : changePicture(kepek[++currentIndex]);
+
 })
+
 
 
 
