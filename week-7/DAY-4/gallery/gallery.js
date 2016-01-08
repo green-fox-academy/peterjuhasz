@@ -7,7 +7,7 @@ var kepek = [
     'http://lorempixel.com/512/384/sports/5/',
     'http://lorempixel.com/512/384/sports/6/',
 ];
-// ---------------------------------------------
+// ----------------------w-----------------------
 
 var picture = document.querySelector('img');
 var currentIndex = 0;
@@ -27,18 +27,27 @@ generateThumbnails(kepek);
 
 previousButton.addEventListener('click',
     function () {
+        document.getElementById('thumbnail'+currentIndex).setAttribute('class','thumbnail');
+
         currentIndex === 0 ? previousButton.setAttribute('disabled','') : (changePicture(kepek[--currentIndex]),
         refreshTitle(currentIndex+1),
         nextButton.removeAttribute('disabled'));
-        // generateThumbnails(kepek);
+
+        document.getElementById('thumbnail'+currentIndex).setAttribute('class','current_img');
 })
 
 nextButton.addEventListener('click',
     function () {
+        // var currentThumbnail = document.getElementById('thumbnail'+currentIndex);
+
+        document.getElementById('thumbnail'+currentIndex).setAttribute('class','thumbnail');
+
         currentIndex + 1 ===  kepek.length ? nextButton.setAttribute('disabled','') : (changePicture(kepek[++currentIndex]),
         refreshTitle(currentIndex+1),
         previousButton.removeAttribute('disabled'));
         // generateThumbnails(kepek);
+
+        document.getElementById('thumbnail'+currentIndex).setAttribute('class','current_img' );
 })
 
 function generateThumbnails(pictures) {
@@ -48,12 +57,8 @@ function generateThumbnails(pictures) {
         thumbnail_img.style.width = '102.4px';
         thumbnail_img.style.height = '76.8px';
         thumbnail_img.setAttribute('class','thumbnail')
+        thumbnail_img.setAttribute('id','thumbnail'+ i)
         thumbnailContainer.appendChild(thumbnail_img)
-        if (currentIndex === i ) {
-            thumbnail_img.setAttribute('class','thumbnail current_img')
-        }else {
-            thumbnail_img.setAttribute('class','thumbnail')
-        }
     }
 }
 
