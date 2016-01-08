@@ -7,13 +7,15 @@ var kepek = [
     'http://lorempixel.com/512/384/sports/5/',
     'http://lorempixel.com/512/384/sports/6/',
 ];
-// ----------------------w-----------------------
+// ---------------------------------------------
 
-var picture = document.querySelector('img');
-var currentIndex = 0;
-var previousButton = document.querySelector('.stepback');
-var nextButton = document.querySelector('.stepforward');
-var thumbnailContainer = document.querySelector('.thumbnails');
+var picture             = document.querySelector('img');
+var currentIndex        = 0;
+var previousButton      = document.querySelector('.stepback');
+var nextButton          = document.querySelector('.stepforward');
+var thumbnailContainer  = document.querySelector('.thumbnails');
+var thumbnail           = document.querySelector('.thumbnails');
+var currentThumbnail    = document.querySelector('.thumbnail'+ currentIndex);
 
 function refreshTitle(id) {
     document.getElementById('title').innerHTML = 'Picture ' + id + '.';
@@ -50,14 +52,20 @@ nextButton.addEventListener('click',
             previousButton.removeAttribute('disabled');
         }
         document.getElementById('thumbnail'+ currentIndex).setAttribute('class','current_img' );
-})
+    }
+)
+
+thumbnail.addEventListener('click',
+    function (event) {
+        console.log(event.target);
+
+    }
+)
 
 function generateThumbnails(pictures) {
     for (var i = 0; i < pictures.length; i++) {
-
-
         var thumbnail_img = document.createElement("img");
-        thumbnail_img.src = kepek[i];
+        thumbnail_img.src = pictures[i];
         thumbnail_img.style.width = '102.4px';
         thumbnail_img.style.height = '76.8px';
         thumbnail_img.setAttribute('class', i===0 ? 'current_img' : 'thumbnail')
