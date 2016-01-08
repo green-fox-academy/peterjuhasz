@@ -1,25 +1,19 @@
 'use strict';
 
 var kepek = [
-    'http://lorempixel.com/400/200/sports/1/',
-    'http://lorempixel.com/400/200/sports/2/',
-    'http://lorempixel.com/400/200/sports/3/',
-    'http://lorempixel.com/400/200/sports/5/',
-    'http://lorempixel.com/400/200/sports/6/',
-    'http://lorempixel.com/400/200/sports/7/',
-    'http://lorempixel.com/400/200/sports/8/',
-    'http://lorempixel.com/400/200/sports/9/',
-    'http://lorempixel.com/400/200/sports/12/'
+    'http://lorempixel.com/512/384/sports/1/',
+    'http://lorempixel.com/512/384/sports/2/',
+    'http://lorempixel.com/512/384/sports/3/',
+    'http://lorempixel.com/512/384/sports/5/',
+    'http://lorempixel.com/512/384/sports/6/',
 ];
-// ---------------------- Buttons -----------------------
+// ---------------------------------------------
 
 var picture = document.querySelector('img');
 var currentIndex = 0;
 var previousButton = document.querySelector('.stepback');
 var nextButton = document.querySelector('.stepforward');
-// var title = document.getElementById('title');
-
-// document.getElementById('title').innerHTML = 'alma';
+var thumbnailContainer = document.querySelector('.thumbnails');
 
 function refreshTitle(id) {
     document.getElementById('title').innerHTML = 'Picture ' + id + '.';
@@ -29,15 +23,40 @@ function changePicture(src) {
     picture.setAttribute('src', src)
 }
 
+generateThumbnails(kepek);
+
 previousButton.addEventListener('click',
     function () {
-        currentIndex === 0 ? alert('this is the first picture') : (changePicture(kepek[--currentIndex]), refreshTitle(currentIndex+1));
+        currentIndex === 0 ? previousButton.setAttribute('disabled','') : (changePicture(kepek[--currentIndex]),
+        refreshTitle(currentIndex+1),
+        nextButton.removeAttribute('disabled'));
+        // generateThumbnails(kepek);
 })
 
 nextButton.addEventListener('click',
     function () {
-        currentIndex + 1 ===  kepek.length ? alert('this is the last picture') : (changePicture(kepek[++currentIndex]), refreshTitle(currentIndex+1));
+        currentIndex + 1 ===  kepek.length ? nextButton.setAttribute('disabled','') : (changePicture(kepek[++currentIndex]),
+        refreshTitle(currentIndex+1),
+        previousButton.removeAttribute('disabled'));
+        // generateThumbnails(kepek);
 })
+
+function generateThumbnails(pictures) {
+    for (var i = 0; i < pictures.length; i++) {
+        var thumbnail_img = document.createElement("img");
+        thumbnail_img.src = kepek[i];
+        thumbnail_img.style.width = '102.4px';
+        thumbnail_img.style.height = '76.8px';
+        thumbnail_img.setAttribute('class','thumbnail')
+        thumbnailContainer.appendChild(thumbnail_img)
+        if (currentIndex === i ) {
+            thumbnail_img.setAttribute('class','thumbnail current_img')
+        }else {
+            thumbnail_img.setAttribute('class','thumbnail')
+        }
+    }
+}
+
 //-------------------Refactoring-------------------------
 // previousButton.addEventListener('click',
 //     function () {

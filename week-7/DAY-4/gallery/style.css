@@ -1,3 +1,37 @@
 .piros {
     background-color: red;
 }
+
+html{
+    text-align: center;
+}
+
+body{
+    background-color: rgb(102, 102, 102);
+}
+
+button{
+    border: 1px solid black;
+}
+
+.button_container{
+    padding: 10px;
+}
+
+.thumbnails{
+    background-color: rgb(149, 153, 156);
+}
+
+.thumbnail{
+    /*border: 3px solid red;*/
+    padding: 2px;
+}
+
+.thumbnail:hover{
+    border: 2px solid aqua;
+    padding: 0px;
+}
+
+.current_img {
+    border: 3px solid red;
+}
