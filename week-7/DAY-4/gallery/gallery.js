@@ -17,6 +17,8 @@ var thumbnailContainer  = document.querySelector('.thumbnails');
 var thumbnail           = document.querySelector('.thumbnails');
 var currentThumbnail    = document.querySelector('.thumbnail'+ currentIndex);
 
+
+
 function refreshTitle(id) {
     document.getElementById('title').innerHTML = 'Picture ' + id + '.';
 }
@@ -58,7 +60,8 @@ nextButton.addEventListener('click',
 thumbnail.addEventListener('click',
     function () {
         console.log(event.target);
-        var lightbox_container = document.getElementById('lightbox');
+        var lightbox_container  = document.getElementById('lightbox');
+
         lightbox_container.setAttribute('class','show_lightbox');
 
         var lightboxImg = document.createElement("img");
@@ -68,15 +71,26 @@ thumbnail.addEventListener('click',
         lightboxImg.setAttribute('class', 'lightbox_image')
         lightbox_container.appendChild(lightboxImg);
 
-        // var lightboxExit = document.querySelector('.lightbox')
-        //
-        // lightboxExit.addEventListener('click',
-        //     function () {
-        //
-        //
-        //     }
+        lightbox_container.addEventListener('click',
+            function () {
+                // console.log('under construction, refresh the page')
+                lightboxImg.parentNode.removeChild(lightboxImg);
+                lightbox_container.setAttribute('class','');
+            }
+        )
     }
 )
+
+// var lightbox_container  = document.getElementById('lightbox');
+// lightbox_container.addEventListener('click',
+//     function () {
+//         console.log('under construction, refresh the page')
+//         // console.log(event.target);
+//         var lightboxImg = document.getElementById('lightbox_image');
+//         lightbox_container.removeChild(lightboxImg);
+//         // lightbox_container.setAttribute('class','');
+//     }
+// )
 
 function generateThumbnails(pictures) {
     for (var i = 0; i < pictures.length; i++) {
