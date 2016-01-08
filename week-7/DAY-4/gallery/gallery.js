@@ -10,7 +10,7 @@ var kepek = [
 // ---------------------------------------------
 
 var picture             = document.querySelector('img');
-var currentIndex        = 0;
+var currentIndex        = 0; //start value
 var previousButton      = document.querySelector('.stepback');
 var nextButton          = document.querySelector('.stepforward');
 var thumbnailContainer  = document.querySelector('.thumbnails');
@@ -56,9 +56,25 @@ nextButton.addEventListener('click',
 )
 
 thumbnail.addEventListener('click',
-    function (event) {
+    function () {
         console.log(event.target);
+        var lightbox_container = document.getElementById('lightbox');
+        lightbox_container.setAttribute('class','show_lightbox');
 
+        var lightboxImg = document.createElement("img");
+        lightboxImg.src = event.target.src;
+        lightboxImg.style.width = '614.4px';
+        lightboxImg.style.height = '460.8px';
+        lightboxImg.setAttribute('class', 'lightbox_image')
+        lightbox_container.appendChild(lightboxImg);
+
+        // var lightboxExit = document.querySelector('.lightbox')
+        //
+        // lightboxExit.addEventListener('click',
+        //     function () {
+        //
+        //
+        //     }
     }
 )
 

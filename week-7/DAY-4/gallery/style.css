@@ -6,12 +6,21 @@ html{
     text-align: center;
 }
 
+h2{
+    font-family: arial;
+    font-size: 30px;
+    font-weight: 300;
+    /*color: white;*/
+    /*border: 1px solid white;*/
+    background-color: rgb(149, 153, 156);
+}
 body{
     background-color: rgb(102, 102, 102);
 }
 
 button{
     border: 1px solid black;
+    font-size: 16px;
 }
 
 .button_container{
@@ -34,4 +43,20 @@ button{
 
 .current_img {
     border: 3px solid red;
+}
+
+.show_lightbox {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color: rgba(237, 237, 237, 0.5);
+    text-align:center;
+}
+
+.lightbox_image {
+    margin-top: 65px;
+    border: 5px solid white;
+    border-radius: 10px;
 }
