@@ -20,7 +20,7 @@ function refreshTitle(id) {
 }
 
 function changePicture(src) {
-    picture.setAttribute('src', src)
+    picture.setAttribute('src', src);
 }
 
 generateThumbnails(kepek);
@@ -28,63 +28,40 @@ generateThumbnails(kepek);
 previousButton.addEventListener('click',
     function () {
         document.getElementById('thumbnail'+currentIndex).setAttribute('class','thumbnail');
-
-        currentIndex === 0 ? previousButton.setAttribute('disabled','') : (changePicture(kepek[--currentIndex]),
-        refreshTitle(currentIndex+1),
-        nextButton.removeAttribute('disabled'));
-
+        if (currentIndex === 0 ) {
+            previousButton.setAttribute('disabled','')
+        }else {
+            changePicture(kepek[--currentIndex]);
+            refreshTitle(currentIndex+1);
+            nextButton.removeAttribute('disabled');
+        }
         document.getElementById('thumbnail'+currentIndex).setAttribute('class','current_img');
 })
 
 nextButton.addEventListener('click',
     function () {
-        // var currentThumbnail = document.getElementById('thumbnail'+currentIndex);
 
-        document.getElementById('thumbnail'+currentIndex).setAttribute('class','thumbnail');
-
-        currentIndex + 1 ===  kepek.length ? nextButton.setAttribute('disabled','') : (changePicture(kepek[++currentIndex]),
-        refreshTitle(currentIndex+1),
-        previousButton.removeAttribute('disabled'));
-        // generateThumbnails(kepek);
-
-        document.getElementById('thumbnail'+currentIndex).setAttribute('class','current_img' );
+        document.getElementById('thumbnail'+ currentIndex).setAttribute('class','thumbnail');
+        if (currentIndex + 1 ===  kepek.length) {
+            nextButton.setAttribute('disabled','');
+        }else {
+            changePicture(kepek[++currentIndex]);
+            refreshTitle(currentIndex+1);
+            previousButton.removeAttribute('disabled');
+        }
+        document.getElementById('thumbnail'+ currentIndex).setAttribute('class','current_img' );
 })
 
 function generateThumbnails(pictures) {
     for (var i = 0; i < pictures.length; i++) {
+
+
         var thumbnail_img = document.createElement("img");
         thumbnail_img.src = kepek[i];
         thumbnail_img.style.width = '102.4px';
         thumbnail_img.style.height = '76.8px';
-        thumbnail_img.setAttribute('class','thumbnail')
+        thumbnail_img.setAttribute('class', i===0 ? 'current_img' : 'thumbnail')
         thumbnail_img.setAttribute('id','thumbnail'+ i)
         thumbnailContainer.appendChild(thumbnail_img)
     }
 }
-
-//-------------------Refactoring-------------------------
-// previousButton.addEventListener('click',
-//     function () {
-//         if (currentIndex === 0) {
-//             alert('this is the first picture')
-//         }else {
-//             changePicture(kepek[--currentIndex]);
-//             refreshTitle(currentIndex+1);
-//         }
-// })
-// nextButton.addEventListener('click',
-//     function () {
-//         if (currentIndex + 1 === kepek.length) {
-//             alert('this is the first picture')
-//         }else {
-//             changePicture(kepek[++currentIndex]);
-//             refreshTitle(currentIndex+1);
-//         }
-// })
-
-
-
-
-
-
-//
