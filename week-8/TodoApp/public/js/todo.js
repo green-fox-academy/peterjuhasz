@@ -1,5 +1,5 @@
 'use strict'
-// HACK: ?? :D
+
 
 var refreshButton = document.querySelector('#refresh-btn');
 var mainContainer = document.querySelector('.main-container');
@@ -21,13 +21,13 @@ function fillMainContainer(listElements) {
     // console.log(listElements[i]);
     todoItem.setAttribute('data-custom-order', 6+i); //NOTE: for add button use listElements.length+1
     todoItem.setAttribute('style', "display: block;");
-    todoItem.innerHTML = listElements[i].text; //todoList
+    todoItem.innerHTML = listElements[i].text;
     console.log(todoItem);
     mainContainer.appendChild(todoItem);
   }
 }
 
-function setAttrForPriority(listElements, todoItem, i) { //TODO:szépíteni!!
+function setAttrForPriority(listElements, todoItem, i) { //TODO:
   if (listElements[i].priority === 'low') {
     todoItem.setAttribute('class','mix low');
   }else if (listElements[i].priority === 'medium') {
