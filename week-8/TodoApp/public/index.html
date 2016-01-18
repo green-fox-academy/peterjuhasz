@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="css/style2.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="css/font.css" media="screen" title="no title" charset="utf-8">
+    <title>TodoAPP</title>
+  </head>
+  <body>
+    <div class="">
+
+    </div>
+    <!-- <h1>ToDo App</h1> -->
+    <main class="main">
+      <div class="control-panel">
+        <em>Control panel</em>
+        <hr>
+        <button id='refresh-btn' type="button" name="button"><span class="icon-loop2"></span></button>
+        <button type="button" name="button"><span class="icon-plus">
+    </span></button>
+        <button type="button" name="button"><span class="icon-cross">
+    </span></button>
+        <button type="button" name="button"><span class="icon-checkmark">
+    </span></button>
+        <hr>
+
+        <label>Filter:</label>
+        <select id="filter-select">
+          <option value="all">All</option>
+          <option value=".low">low</option>
+          <option value=".medium">medium</option>
+          <option value=".high">high</option>
+        </select>
+
+        <label>Sort:</label>
+        <select id="sort-select">
+          <option value="custom-order:asc">Asc</option>
+          <option value="custom-order:desc">Desc</option>
+          <option value="random">Random</option>
+        </select>
+      </div>
+      <div class="main-container container">
+        <!-- <div class="mix low" data-custom-order="1">Box 1 - LOW</div>
+        <div class="mix medium" data-custom-order="2">Box 2 - MEDIUM</div>
+        <div class="mix low" data-custom-order="3">Box 3 - LOW</div>
+        <div class="mix medium" data-custom-order="4">Box 4 - MEDIUM</div>
+        <div class="mix medium" data-custom-order="5">Box 5 - MEDIUM</div>
+        <div class="mix high" data-custom-order="6">Box 6 - HIGH</div> -->
+      </div>
+    </main>
+    <script src="js/todo_request.js" charset="utf-8"></script>
+    <script src="js/todo.js" charset="utf-8"></script>
+
+    <!-- mixitup components -->
+    <script src="components/jquery/dist/jquery.min.js"></script>
+    <script src="components/mixitup/src/jquery.mixitup.js"></script>
+    <script src="js/mix-config.js"></script>
+  </body>
+</html>
