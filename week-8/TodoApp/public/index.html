@@ -16,13 +16,23 @@
       <div class="control-panel">
         <em>Control panel</em>
         <hr>
-        <button id='refresh-btn' type="button" name="button"><span class="icon-loop2"></span></button>
-        <button type="button" name="button"><span class="icon-plus">
-    </span></button>
-        <button type="button" name="button"><span class="icon-cross">
-    </span></button>
-        <button type="button" name="button"><span class="icon-checkmark">
-    </span></button>
+
+        <button  type="button" id="add-btn" name="button">
+          <span class="icon-plus"></span>
+        </button>
+
+        <button type="button" id="done-btn" name="button">
+          <span class="icon-checkmark"></span>
+        </button>
+
+        <button type="button" id="delete-btn" name="button">
+          <span class="icon-cross"></span>
+        </button>
+
+        <button type="button" id="refresh-btn" name="button">
+          <span class="icon-loop2"></span>
+        </button>
+
         <hr>
 
         <label>Filter:</label>
@@ -49,12 +59,14 @@
         <div class="mix high" data-custom-order="6">Box 6 - HIGH</div> -->
       </div>
     </main>
-    <script src="js/todo_request.js" charset="utf-8"></script>
-    <script src="js/todo.js" charset="utf-8"></script>
+
+    <!-- <textarea name="name" rows="3" cols="40" placeholder="placeholder"></textarea> -->
 
     <!-- mixitup components -->
     <script src="components/jquery/dist/jquery.min.js"></script>
     <script src="components/mixitup/src/jquery.mixitup.js"></script>
     <script src="js/mix-config.js"></script>
+    <script src="js/todo_request.js" charset="utf-8"></script>
+    <script src="js/todo.js" charset="utf-8"></script>
   </body>
 </html>

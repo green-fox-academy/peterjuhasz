@@ -1,13 +1,29 @@
 'use strict'
 
 
+var addButton = document.querySelector('#add-btn');
+var doneButton = document.querySelector('#done-btn');
+var deleteButton = document.querySelector('#delete-btn');
 var refreshButton = document.querySelector('#refresh-btn');
+
 var mainContainer = document.querySelector('.main-container');
+
+addButton.addEventListener('click', function () {
+  console.log('add');
+})
+
+doneButton.addEventListener('click', function () {
+  console.log('done');
+})
+
+deleteButton.addEventListener('click', function () {
+  console.log('delete');
+})
 
 refreshButton.addEventListener('click', function () {
   console.log('megnyomtad a gombot');
 
-  todoRequest(function (todoList) {
+  refreshRequest(function (todoList) {
     console.log(todoList);
     fillMainContainer(todoList);
   });

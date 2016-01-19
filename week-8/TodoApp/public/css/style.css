@@ -71,19 +71,25 @@ button {
   /* outline: none; */
   /* border-radius: 100px; */
 }
-button:focus{
+button:hover{
   border-color: #ffffff;
   background-color: #9f9f9f;
   box-shadow: 0 0 0 1px #9f9f9f;
   outline: none;
 }
-button:hover {
+/*button:hover {
   background-color: #2c3e50;
   color: #fff;
   border: 1px solid #34495e;
   text-shadow: 0 1px rgba(0,0,0,0.1);
-}
-1);
-}
-1);
-}
+}*/
+
+/*textarea::-webkit-input-placeholder {
+  position: relative;
+  font-size: 16px;
+  font-style: italic;
+  color: #ABABAB;
+  top: 50%;
+  text-align: center;
+  padding-top: 10px;
+}*/
