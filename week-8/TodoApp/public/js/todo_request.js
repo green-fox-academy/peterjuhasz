@@ -14,7 +14,19 @@
 //   return refreshRequest;
 // })();
 
-function refreshRequest(callback) {
+
+// var TODO_URL = 'http://localhost:3000/todos';
+// function requestTemplate(id, method, callback){
+//   $.ajax({
+//     url: TODO_URL + id,
+//     method: method,
+//     success: function(response){
+//       callback(response);
+//     }
+//   });
+// }
+
+function getRequest(callback) {
   var TODO_URL = 'http://localhost:3000/todos';
   $.ajax({
     url: TODO_URL,

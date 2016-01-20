@@ -18,22 +18,21 @@ doneButton.addEventListener('click', function () {
 })
 
 deleteButton.addEventListener('click', function () {
-  deleteItem();
-  refreshRequest(function (todoList) {
-    fillMainContainer(todoList);
-  });
+  deleteItem(refreshItems);
 })
 
 refreshButton.addEventListener('click', function () {
-  // console.log('megnyomtad a gombot');
-  refreshRequest(function (todoList) {
-    // console.log(todoList);
-    fillMainContainer(todoList);
-  });
+  // // console.log('megnyomtad a gombot');
+  refreshItems();
 })
 //==============================================================
+function refreshItems(){
+  getRequest(function (todoList) {
+    fillMainContainer(todoList);
+  });
+}
 
-function deleteItem(){
+function deleteItem(callback){
   var itemsToDelete = document.querySelectorAll('.checkbox');
   for (var i = 0; i < itemsToDelete.length; i++) {
     if (itemsToDelete[i].checked===true) {
@@ -41,6 +40,7 @@ function deleteItem(){
       deleteRequest(parseInt(itemsToDelete[i].id))
     }
   }
+  callback();
 }
 
 function fillMainContainer(listElements) {
