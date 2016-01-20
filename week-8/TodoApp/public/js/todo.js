@@ -9,7 +9,7 @@ var refreshButton = document.querySelector('#refresh-btn');
 var mainContainer = document.querySelector('.main-container');
 //==============================================================
 addButton.addEventListener('click', function () {
-  postRequest();
+  newItem()
   console.log('add');
 })
 
@@ -18,7 +18,7 @@ doneButton.addEventListener('click', function () {
 })
 
 deleteButton.addEventListener('click', function () {
-  deleteItem(refreshItems);
+  deleteItem();
 })
 
 refreshButton.addEventListener('click', function () {
@@ -32,15 +32,18 @@ function refreshItems(){
   });
 }
 
-function deleteItem(callback){
+function newItem(argument) {
+  postRequest('proba', 'low', refreshItems)
+}
+
+function deleteItem(){
   var itemsToDelete = document.querySelectorAll('.checkbox');
   for (var i = 0; i < itemsToDelete.length; i++) {
     if (itemsToDelete[i].checked===true) {
       console.log(parseInt(itemsToDelete[i].id));
-      deleteRequest(parseInt(itemsToDelete[i].id))
+      deleteRequest(parseInt(itemsToDelete[i].id), refreshItems)
     }
   }
-  callback();
 }
 
 function fillMainContainer(listElements) {
@@ -51,7 +54,7 @@ function fillMainContainer(listElements) {
     // console.log(listElements[i]);
     todoItem.setAttribute('data-custom-order', listElements[i].id);
     todoItem.setAttribute('style', "display: block;");
-    todoItem.innerHTML = listElements[i].text + '<input type="checkbox" class="checkbox" id='+listElements[i].id+'>';
+    todoItem.innerHTML = listElements[i].id + '.' + listElements[i].text + '<input type="checkbox" class="checkbox" id='+listElements[i].id+'>';
     console.log(todoItem);
     mainContainer.appendChild(todoItem);
   }
