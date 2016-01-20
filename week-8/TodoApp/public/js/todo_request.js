@@ -1,30 +1,40 @@
 'use strict';
 
-var refreshRequest = (function(){
-  function refreshRequest(callback) {
-    var TODO_URL = 'http://localhost:3000/todos';
-    $.ajax({
-      url: TODO_URL,
-      method: 'GET',
-      success: function(response){
-        callback(response);
-      }
-    });
-  }
-  return refreshRequest;
-})();
+// var refreshRequest = (function(){
+//   function refreshRequest(callback) {
+//     var TODO_URL = 'http://localhost:3000/todos';
+//     $.ajax({
+//       url: TODO_URL,
+//       method: 'GET',
+//       success: function(response){
+//         callback(response);
+//       }
+//     });
+//   }
+//   return refreshRequest;
+// })();
 
-}
-function deleteRequest() {
+function refreshRequest(callback) {
+  var TODO_URL = 'http://localhost:3000/todos';
   $.ajax({
-    url: 'http://localhost:3000/todos/1',
+    url: TODO_URL,
+    method: 'GET',
+    success: function(response){
+      callback(response);
+    }
+  });
+}
+
+function deleteRequest(id) {
+  $.ajax({
+    url: 'http://localhost:3000/todos/'+id,
     method: 'DELETE',
     data: undefined,
     success: function(response){
       console.log(response);
     }
   });
-  refreshRequest();
+  // refreshRequest();
 }
 
 function postRequest() {

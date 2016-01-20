@@ -7,8 +7,9 @@ var deleteButton = document.querySelector('#delete-btn');
 var refreshButton = document.querySelector('#refresh-btn');
 
 var mainContainer = document.querySelector('.main-container');
-
+//==============================================================
 addButton.addEventListener('click', function () {
+  postRequest();
   console.log('add');
 })
 
@@ -17,33 +18,46 @@ doneButton.addEventListener('click', function () {
 })
 
 deleteButton.addEventListener('click', function () {
-  console.log('delete');
-})
-
-refreshButton.addEventListener('click', function () {
-  console.log('megnyomtad a gombot');
-
+  deleteItem();
   refreshRequest(function (todoList) {
-    console.log(todoList);
     fillMainContainer(todoList);
   });
 })
 
+refreshButton.addEventListener('click', function () {
+  // console.log('megnyomtad a gombot');
+  refreshRequest(function (todoList) {
+    // console.log(todoList);
+    fillMainContainer(todoList);
+  });
+})
+//==============================================================
+
+function deleteItem(){
+  var itemsToDelete = document.querySelectorAll('.checkbox');
+  for (var i = 0; i < itemsToDelete.length; i++) {
+    if (itemsToDelete[i].checked===true) {
+      console.log(parseInt(itemsToDelete[i].id));
+      deleteRequest(parseInt(itemsToDelete[i].id))
+    }
+  }
+}
+
 function fillMainContainer(listElements) {
+  mainContainer.innerHTML = "";
   for (var i = 0; i < listElements.length; i++) {
     var todoItem = document.createElement("div");
-
     setAttrForPriority(listElements, todoItem, i)
     // console.log(listElements[i]);
-    todoItem.setAttribute('data-custom-order', 6+i); //NOTE: for add button use listElements.length+1
+    todoItem.setAttribute('data-custom-order', listElements[i].id);
     todoItem.setAttribute('style', "display: block;");
-    todoItem.innerHTML = listElements[i].text;
+    todoItem.innerHTML = listElements[i].text + '<input type="checkbox" class="checkbox" id='+listElements[i].id+'>';
     console.log(todoItem);
     mainContainer.appendChild(todoItem);
   }
 }
 
-function setAttrForPriority(listElements, todoItem, i) { //TODO:
+function setAttrForPriority(listElements, todoItem, i) {
   if (listElements[i].priority === 'low') {
     todoItem.setAttribute('class','mix low');
   }else if (listElements[i].priority === 'medium') {
