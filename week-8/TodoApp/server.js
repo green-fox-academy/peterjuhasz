@@ -9,7 +9,7 @@ var app = express();
 items.add({text: 'Buy milk', priority: 'low'});
 items.add({text: 'Make dinner', priority: 'medium'});
 items.add({text: 'Save the world', priority: 'high' });
-items.add({text: 'test', priority: 'low'});
+// items.add({text: 'test', priority: 'low'});
 
 // Basic middlewares
 //---------Enable Cross-Domain requests--------
